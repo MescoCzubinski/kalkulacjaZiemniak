@@ -34,9 +34,24 @@ select.visited {
 .display-state-button {
   @apply text-lg text-center p-1 m-1 ml-5 border-bg-info border-2 rounded-2xl hover:bg-bg-info/30;
 }
-/* .section-input {
-  @apply flex flex-col;
-} */
-input {
+input[type="text"] {
   @apply w-24 h-12 pl-2 text-xl border-2 border-bg-info rounded-2xl rounded-l-3xl flex-1 hover:bg-bg-info/25;
+}
+input[type="checkbox"] {
+  @apply h-12 w-12 mr-4 text-xl border-2 border-bg-info rounded-2xl bg-transparent hover:bg-bg-info/25;
+  -webkit-appearance: none;
+  position: relative;
+}
+input[type="checkbox"]::before {
+  @apply text-3xl absolute text-bg-info;
+  content: "+";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+input[type="checkbox"]:disabled {
+  @apply bg-bg-info;
+}
+input[type="checkbox"]:checked {
+  @apply bg-top-agrar-green;
 }

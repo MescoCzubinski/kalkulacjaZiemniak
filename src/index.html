@@ -87,8 +87,12 @@
           <div class="section">
             <div class="text-xl text-left mb-2 ml-2 mt-5">Stawka dopłaty do transportu:</div>
             <div class="flex flex-col mt-2 mb-2 text-xl">
-              <div class=""><input type="radio" name="option" class="h-6" checked class="section-3" id="section-3-radio-1" /> ziemniaka</div>
-              <div class=""><input type="radio" name="option" class="h-6" class="section-3" id="section-3-radio-2" /> skrobi</div>
+              <label>
+                <div class=""><input type="radio" name="option" class="" checked class="section-3" id="section-3-radio-1" /> ziemniaka</div>
+              </label>
+              <label>
+                <div class=""><input type="radio" name="option" class="" class="section-3" id="section-3-radio-2" /> skrobi</div>
+              </label>
             </div>
 
             <div class="flex">
@@ -131,10 +135,102 @@
             </div>
           </div>
         </div>
-        <div class="flex text-2xl pb-5 font-bold w-full justify-center">
+        <div class="font-bold flex justify-center text-2xl mb-5 w-full items-center h-fit">
           <div class="p-1">Razem za ziemniaki</div>
           <div class="p-1 ml-2 text-top-agrar-green" id="section-5-result-1">uzupełnij</div>
         </div>
+      </div>
+      <div class="w-10/12 border-t-2 border-bg-info m-auto"></div>
+
+      <div class="flex w-full justify-center p-3">
+        <div class="section-name">DOPŁATY I EKOSCHEMATY</div>
+        <button class="display-state-button">Pokaż</button>
+      </div>
+      <div class="show-hide-content">
+        <div class="flex justify-around flex-wrap">
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5 h-14">Dopłata do ziemniaków skrobiowych:</div>
+            <div class="flex">
+              <input type="text" class="section-6" id="section-6-input-1" placeholder="1580.89" value="1580.89" />
+              <div class="ml-2 text-xl flex items-center">zł/ha</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5 h-14">Podstawowe wsparcie dochodów:</div>
+            <div class="flex">
+              <input type="text" class="section-6" id="section-6-input-2" placeholder="483.20" value="483.20" />
+              <div class="ml-2 text-xl flex items-center">zł/ha</div>
+            </div>
+          </div>
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5 h-14">Płatność redystrybucyjna:</div>
+            <div class="flex">
+              <input type="text" class="section-6" id="section-6-input-3" placeholder="168.79" value="168.79" />
+              <div class="ml-2 text-xl flex items-center">zł/ha</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5 h-14">Płatność dla młodych rolników:</div>
+            <div class="flex">
+              <input type="text" class="section-6" id="section-6-input-4" placeholder="256.55" value="256.55" />
+              <div class="ml-2 text-xl flex items-center">zł/ha</div>
+            </div>
+          </div>
+        </div>
+        <div class="w-10/12 mt-6 border-t-2 border-bg-info m-auto"></div>
+        <div class="flex justify-around flex-wrap">
+          <div class="section">
+            <div class="text-lg text-left text-bg-info mb-2 ml-2 mt-5">Kliknij + by dodać ekoschemat do wyniku. Wykluczenia ustawiają się automatycznie</div>
+            <div class="text-xl text-left mb-2 ml-2 mt-3">Międzyplony lub wsiewki:</div>
+            <div class="flex">
+              <input type="checkbox" class="section-6" id="section-6-check-5" />
+              <input type="text" class="section-6" id="section-6-input-5" placeholder="435.10" value="435.10" />
+              <div class="ml-2 text-xl flex items-center">zł/ha</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Planu nawożenia:</div>
+            <div class="flex">
+              <input type="checkbox" class="section-6" id="section-6-check-6" />
+              <input type="text" class="section-6" id="section-6-input-6" placeholder="87.02" value="87.02" />
+              <div class="ml-2 text-xl flex items-center">zł/ha</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Zróżnicowana struktura upraw:</div>
+            <div class="flex">
+              <input type="checkbox" class="section-6" id="section-6-check-7" />
+              <input type="text" class="section-6" id="section-6-input-7" placeholder="225.01" value="225.01" />
+              <div class="ml-2 text-xl flex items-center">zł/ha</div>
+            </div>
+          </div>
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Wymieszanie obornika:</div>
+            <div class="flex">
+              <input type="checkbox" class="section-6" id="section-6-check-8" />
+              <input type="text" class="section-6" id="section-6-input-8" placeholder="174.04" value="174.04" />
+              <div class="ml-2 text-xl flex items-center">zł/ha</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Naturalne nierozbryzgowo:</div>
+            <div class="flex">
+              <input type="checkbox" class="section-6" id="section-6-check-9" />
+              <input type="text" class="section-6" id="section-6-input-9" placeholder="261.06" value="261.06" />
+              <div class="ml-2 text-xl flex items-center">zł/ha</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Uproszczone systemy uprawy:</div>
+            <div class="flex">
+              <input type="checkbox" class="section-6" id="section-6-check-10" />
+              <input type="text" class="section-6" id="section-6-input-10" placeholder="251.94" value="251.94" />
+              <div class="ml-2 text-xl flex items-center">zł/ha</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Wymieszanie słomy z glebą:</div>
+            <div class="flex">
+              <input type="checkbox" class="section-6" id="section-6-check-11" />
+              <input type="text" class="section-6" id="section-6-input-11" placeholder="134.60"" value="134.60" />
+              <div class="ml-2 text-xl flex items-center">zł/ha</div>
+            </div>
+          </div>
+          <div class="font-bold flex justify-center text-2xl mb-5 w-full items-center h-fit">
+            <div class="p-1">Razem dopłaty z budż. i UE:</div>
+            <div class="p-1 ml-2 text-top-agrar-green" id="section-6-result-1">uzupełnij</div>
+          </div>
+        </div>
+      </div>
+      <div class="font-bold flex justify-center text-2xl mb-5 w-full items-center h-fit">
+        <div class="p-1">Suma przychodów:</div>
+        <div class="p-1 ml-2 text-top-agrar-green" id="result-1">uzupełnij</div>
       </div>
     </div>
   </body>
