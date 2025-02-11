@@ -1,12 +1,36 @@
 function format(inputString) {
   return inputString
-    .replace(/^0/g, "")
+    .replace(/[^0-9.,]/g, "") // Allow only numbers, dots, and commas
+    .replace(/^0(?!\.)/g, "")
     .replace(/,/g, ".")
     .replace(/^\.($|[^0-9])/, "0.")
     .replace(/\.{2,}/g, ".")
     .replace(/(.*?\..*?)\./g, "$1")
-    .replace(/(\d+\.\d{2})\d*/g, "$1")
-    .replace(/[a-zA-Z]+/g, "");
+    .replace(/(\d+\.\d{2})\d*/g, "$1");
+}
+function separator(variable) {
+  const separatorIndex = variable.indexOf(".");
+  let beforeDot,
+    afterDot,
+    result = "";
+
+  if (separatorIndex === -1) {
+    beforeDot = variable;
+    afterDot = "";
+  } else {
+    beforeDot = variable.slice(0, separatorIndex);
+    afterDot = variable.slice(separatorIndex);
+  }
+
+  const firstGroupSize = beforeDot.length % 3 || 3;
+  result = beforeDot.slice(0, firstGroupSize);
+  beforeDot = beforeDot.slice(firstGroupSize);
+
+  while (beforeDot.length > 0) {
+    result += " " + beforeDot.slice(0, 3);
+    beforeDot = beforeDot.slice(3);
+  }
+  return result + afterDot;
 }
 document.querySelectorAll("input").forEach((input) => {
   input.addEventListener("input", (event) => {
@@ -30,7 +54,7 @@ document.querySelectorAll(".display-state-button").forEach((btn, index) => {
 
     content.style.height = content.style.height === "0px" || !content.style.height ? content.scrollHeight + "px" : "0px";
 
-    btn.textContent = content.style.height === "0px" ? "Pokaż" : "Ukryj";
+    btn.textContent = content.style.height === "0px" ? "Rozwiń" : "Zwiń";
   });
 });
 
@@ -116,10 +140,10 @@ document.querySelectorAll(".section-1, .section-2, .section-3, .section-4").forE
     let sec3res1Value = parseFloat(sec3res1.innerHTML.replace(" zł", "").trim()) || 0;
     let sec4res1Value = parseFloat(sec4res1.innerHTML.replace(" zł", "").trim()) || 0;
 
-    let total = sec2res3Value + sec3res1Value + sec4res1Value;
+    let result = sec2res3Value + sec3res1Value + sec4res1Value;
 
-    if (total !== 0) {
-      sec5res1.innerHTML = total.toFixed(2) + " zł";
+    if (result !== 0) {
+      sec5res1.innerHTML = result.toFixed(2) + " zł";
     }
   });
 });
@@ -130,6 +154,8 @@ let sec6res1 = document.querySelector("#section-6-result-1");
 
 const exclusionMap = {
   "section-6-check-5": ["section-6-check-10", "section-6-check-11"],
+  "section-6-check-6": [],
+  "section-6-check-7": [],
   "section-6-check-8": ["section-6-check-9", "section-6-check-10", "section-6-check-11"],
   "section-6-check-9": ["section-6-check-8", "section-6-check-11"],
   "section-6-check-10": ["section-6-check-5", "section-6-check-8", "section-6-check-11"],
@@ -138,28 +164,34 @@ const exclusionMap = {
 
 sec6Checks.forEach((checkbox) => {
   checkbox.addEventListener("change", () => {
-    sec6Checks.forEach((c) => (c.disabled = false));
+    sec6Checks.forEach((c) => (c.disabled = false)); // Najpierw odblokuj wszystkie checkboxy
 
-    exclusionMap[checkbox.id]?.forEach((excludedId) => {
-      let excludedCheckbox = document.querySelector(`#${excludedId}`);
-      if (checkbox.checked && excludedCheckbox) {
-        excludedCheckbox.disabled = true;
-      }
+    // Sprawdzamy, które checkboxy mają być wyłączone
+    sec6Checks.forEach((checkbox) => {
+      exclusionMap[checkbox.id]?.forEach((excludedId) => {
+        let excludedCheckbox = document.querySelector(`#${excludedId}`);
+        if (checkbox.checked && excludedCheckbox) {
+          excludedCheckbox.disabled = true;
+        }
+      });
     });
   });
 });
 
-document.querySelectorAll(".section-6, #section-2-input-1").forEach((input) => {
+document.querySelectorAll(".section-6").forEach((input) => {
   input.addEventListener("input", () => {
-    let total = sec6Inputs.reduce((sum, input) => {
+    let result = sec6Inputs.reduce((sum, input) => {
       let idNum = parseInt(input.id.split("-").pop());
-      return sum + (idNum < 5 || document.querySelector(`#section-6-check-${idNum}`)?.checked ? Number(input.value) || 0 : 0);
+      let checkbox = document.querySelector(`#section-6-check-${idNum}`);
+      return sum + (checkbox?.checked ? Number(input.value) || 0 : 0);
     }, 0);
 
-    total *= Number(sec2in1.value);
+    result *= Number(sec2in1.value);
 
-    if (total !== 0) {
-      sec6res1.innerHTML = total ? total.toFixed(2) + " zł" : "";
+    if (result !== 0) {
+      sec6res1.innerHTML = result ? result.toFixed(2) + " zł" : "";
+    } else {
+      sec6res1.innerHTML = "dodaj";
     }
   });
 });
@@ -170,10 +202,10 @@ document.querySelectorAll(".section-1, .section-2, .section-3, .section-4, .sect
     let przychody = parseFloat(sec5res1.innerHTML.replace(" zł", "").trim()) || 0;
     let doplaty = parseFloat(sec6res1.innerHTML.replace(" zł", "").trim()) || 0;
 
-    let total = przychody + doplaty;
+    let result = przychody + doplaty;
 
-    if (total !== 0) {
-      res1.innerHTML = total.toFixed(2) + " zł";
+    if (result !== 0) {
+      res1.innerHTML = result.toFixed(2) + " zł";
     }
   });
 });
@@ -391,10 +423,10 @@ document.querySelectorAll("input").forEach((input) => {
     let s16 = parseFloat(sec16res1.innerHTML.replace(" zł/ha/rok", "").trim()) || 0;
     let s17 = parseFloat(sec17res1.innerHTML.replace(" zł/ha/rok", "").trim()) || 0;
 
-    let total = s7 + s8 + s9 + s10 + s11 + s12 + s13 + s14 + s15 + s16 + s17;
+    let result = s7 + s8 + s9 + s10 + s11 + s12 + s13 + s14 + s15 + s16 + s17;
 
-    if (total !== 0) {
-      res2.innerHTML = total.toFixed(2) + " zł";
+    if (result !== 0) {
+      res2.innerHTML = result.toFixed(2) + " zł";
     }
   });
 });

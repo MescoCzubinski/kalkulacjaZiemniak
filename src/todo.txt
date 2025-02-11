@@ -1,0 +1,13 @@
+40 min 14:00->
+TOCHECK: stawka dopłaty [dt/zł]
+TOKNOW: zmiana jednej wartości w nawozach naturlanych - zapsane, żeby nie uciekło
+
+TODO: oddzielanie dziesiętnych
+
+TODO: checkboxy:
+-badanie gleby, wapno, międzyplon, nawozy naturlane, glifosat, odkamienianie - po jednym plusie
+-zabiegi jesienne, zabiegi wiosenne, zarządzanie - plus przy każdej ramce
+-sadzeniaki - plus przy kupionych i włąsnych
+
+FIXME: usuwanie danych - wynik się nie zmienia
+FIXME: klikniecie jednego powoduje, że te co miały być wyłączone nie są wyłączone
