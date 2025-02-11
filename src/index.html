@@ -228,9 +228,465 @@
           </div>
         </div>
       </div>
-      <div class="font-bold flex justify-center text-2xl mb-5 w-full items-center h-fit">
+      <div class="font-bold flex justify-center text-2xl mb-3 mt-3 w-full 1 items-center h-fit">
         <div class="p-1">Suma przychodów:</div>
         <div class="p-1 ml-2 text-top-agrar-green" id="result-1">uzupełnij</div>
+      </div>
+
+      <div class="w-10/12 mt-6 border-t-2 border-bg-info m-auto"></div>
+      <div class="flex w-full justify-center p-3">
+        <div class="section-name">BADANIE GLEBY</div>
+        <button class="display-state-button">Pokaż</button>
+      </div>
+      <div class="show-hide-content">
+        <div class="flex justify-around flex-wrap">
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Cena:</div>
+            <div class="flex">
+              <input type="text" class="section-7" id="section-7-input-1" placeholder="cena próbki" value="12" />
+              <div class="ml-2 text-xl flex items-center">zł/próbkę</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Liczba próbek:</div>
+            <div class="flex">
+              <input type="text" class="section-7" id="section-7-input-2" placeholder="liczba próbek na ha" value="0.5" />
+              <div class="ml-2 text-xl flex items-center">próbek/ha</div>
+            </div>
+          </div>
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Częstość:</div>
+            <div class="flex">
+              <input type="text" class="section-7" id="section-7-input-3" placeholder="na ile lat" value="3" />
+              <div class="ml-2 text-xl flex items-center">lat</div>
+            </div>
+            <div class="flex justify-center text-2xl mt-14 w-full items-center h-fit">
+              <div class="p-1">Koszt:</div>
+              <div class="p-1 ml-2 text-top-agrar-green" id="section-7-result-1">2.00 zł/ha/rok</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-10/12 border-t-2 border-bg-info m-auto"></div>
+      <div class="flex w-full justify-center p-3">
+        <div class="section-name">WAPNO</div>
+        <button class="display-state-button">Pokaż</button>
+      </div>
+      <div class="show-hide-content">
+        <div class="flex justify-around flex-wrap">
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Koszt wapna:</div>
+            <div class="flex">
+              <input type="text" class="section-8" id="section-8-input-1" placeholder="cena wapna" value="220" />
+              <div class="ml-2 text-xl flex items-center">zł/t</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Koszt rozsiewu:</div>
+            <div class="flex">
+              <input type="text" class="section-8" id="section-8-input-2" placeholder="koszt rozsiewu" value="120" />
+              <div class="ml-2 text-xl flex items-center">zł/ha</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Koszt załadunku:</div>
+            <div class="flex">
+              <input type="text" class="section-8" id="section-8-input-3" placeholder="koszt załadunku" value="12" />
+              <div class="ml-2 text-xl flex items-center">zł/t</div>
+            </div>
+          </div>
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Ilość na ha:</div>
+            <div class="flex">
+              <input type="text" class="section-8" id="section-8-input-4" placeholder="ile t na ha" value="2.5" />
+              <div class="ml-2 text-xl flex items-center">t/ha</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Częstotliwość:</div>
+            <div class="flex">
+              <input type="text" class="section-8" id="section-8-input-5" placeholder="na ile lat" value="4" />
+              <div class="ml-2 text-xl flex items-center">lat</div>
+            </div>
+
+            <div class="flex justify-center text-2xl mt-14 w-full items-center h-fit">
+              <div class="p-1">Koszt:</div>
+              <div class="p-1 ml-2 text-top-agrar-green" id="section-8-result-1">175.00 zł/ha/rok</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-10/12 border-t-2 border-bg-info m-auto"></div>
+      <div class="flex w-full justify-center p-3">
+        <div class="section-name">MIĘDZYPLON</div>
+        <button class="display-state-button">Pokaż</button>
+      </div>
+      <div class="show-hide-content">
+        <div class="flex justify-around flex-wrap">
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Cena nasion:</div>
+            <div class="flex">
+              <input type="text" class="section-9" id="section-9-input-1" placeholder="cena nasion" value="125" />
+              <div class="ml-2 text-xl flex items-center">zł/kg</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Cena siewu:</div>
+            <div class="flex">
+              <input type="text" class="section-9" id="section-9-input-2" placeholder="cena siewu" value="120" />
+              <div class="ml-2 text-xl flex items-center">zł</div>
+            </div>
+          </div>
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Ilość na ha:</div>
+            <div class="flex">
+              <input type="text" class="section-9" id="section-9-input-3" placeholder="ile t na ha" value="6.6" />
+              <div class="ml-2 text-xl flex items-center">t/ha</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Częstotliwość:</div>
+            <div class="flex">
+              <input type="text" class="section-9" id="section-9-input-4" placeholder="na ile lat" value="4" />
+              <div class="ml-2 text-xl flex items-center">lat</div>
+            </div>
+
+            <div class="flex justify-center text-2xl mt-14 w-full items-center h-fit">
+              <div class="p-1">Koszt:</div>
+              <div class="p-1 ml-2 text-top-agrar-green" id="section-9-result-1">236.25 zł/ha/rok</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-10/12 border-t-2 border-bg-info m-auto"></div>
+      <div class="flex w-full justify-center p-3">
+        <div class="section-name">NAWOZY NATURALNE</div>
+        <button class="display-state-button">Pokaż</button>
+      </div>
+      <div class="show-hide-content">
+        <div class="flex justify-around flex-wrap">
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Cena nawozu:</div>
+            <div class="flex">
+              <input type="text" class="section-10" id="section-10-input-1" placeholder="230" value="230" />
+              <div class="ml-2 text-xl flex items-center">zł/t, m<sup>3</sup></div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Koszt stosowania:</div>
+            <div class="flex">
+              <input type="text" class="section-10" id="section-10-input-2" placeholder="180" value="180" />
+              <div class="ml-2 text-xl flex items-center">zł/ha</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Koszt załadunku:</div>
+            <div class="flex">
+              <input type="text" class="section-10" id="section-10-input-3" placeholder="10" value="10" />
+              <div class="ml-2 text-xl flex items-center">zł/t</div>
+            </div>
+          </div>
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Liczba t na ha:</div>
+            <div class="flex">
+              <input type="text" class="section-10" id="section-10-input-4" placeholder="20" value="20" />
+              <div class="ml-2 text-xl flex items-center">t/ha</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Częstotliwość:</div>
+            <div class="flex">
+              <input type="text" class="section-10" id="section-10-input-5" placeholder="4" value="4" />
+              <div class="ml-2 text-xl flex items-center">lat</div>
+            </div>
+
+            <div class="flex justify-center text-2xl mt-14 w-full items-center h-fit">
+              <div class="p-1">Koszt:</div>
+              <div class="p-1 ml-2 text-top-agrar-green" id="section-10-result-1">1,245.00 zł/ha/rok</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-10/12 border-t-2 border-bg-info m-auto"></div>
+      <div class="flex w-full justify-center p-3">
+        <div class="section-name">ZABIEGI JESIENNE</div>
+        <button class="display-state-button">Pokaż</button>
+      </div>
+      <div class="show-hide-content">
+        <div class="flex justify-around flex-wrap">
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Uprawa po przedplonie:</div>
+            <div class="flex">
+              <input type="text" class="section-11" id="section-11-input-1" placeholder="120" value="120" />
+              <div class="ml-2 text-xl flex items-center">zł/ha</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Mulczowanie międzyplonu:</div>
+            <div class="flex">
+              <input type="text" class="section-11" id="section-11-input-2" placeholder="140" value="140" />
+              <div class="ml-2 text-xl flex items-center">zł/ha</div>
+            </div>
+          </div>
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Uprawa głęboka:</div>
+            <div class="flex">
+              <input type="text" class="section-11" id="section-11-input-3" placeholder="220" value="220" />
+              <div class="ml-2 text-xl flex items-center">zł/ha</div>
+            </div>
+
+            <div class="flex justify-center text-2xl mt-14 w-full items-center h-fit">
+              <div class="p-1">Koszt:</div>
+              <div class="p-1 ml-2 text-top-agrar-green" id="section-11-result-1">480.00 zł/ha/rok</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-10/12 border-t-2 border-bg-info m-auto"></div>
+      <div class="flex w-full justify-center p-3">
+        <div class="section-name">GLIFOSAT</div>
+        <button class="display-state-button">Pokaż</button>
+      </div>
+      <div class="show-hide-content">
+        <div class="flex justify-around flex-wrap">
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Herbicyd z glifosatem:</div>
+            <div class="flex">
+              <input type="text" class="section-12" id="section-12-input-1" placeholder="23" value="23" />
+              <div class="ml-2 text-xl flex items-center">zł/l</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Adiuwant do glifosatu:</div>
+            <div class="flex">
+              <input type="text" class="section-12" id="section-12-input-2" placeholder="12" value="12" />
+              <div class="ml-2 text-xl flex items-center">zł/l</div>
+            </div>
+          </div>
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Liczba l herbicydu na ha:</div>
+            <div class="flex">
+              <input type="text" class="section-12" id="section-12-input-3" placeholder="2" value="2" />
+              <div class="ml-2 text-xl flex items-center">l/ha</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Liczba l adiuwantu na ha:</div>
+            <div class="flex">
+              <input type="text" class="section-12" id="section-12-input-4" placeholder="1" value="1" />
+              <div class="ml-2 text-xl flex items-center">l/ha</div>
+            </div>
+
+            <div class="flex justify-center text-2xl mt-14 w-full items-center h-fit">
+              <div class="p-1">Koszt:</div>
+              <div class="p-1 ml-2 text-top-agrar-green" id="section-12-result-1">58.00 zł/ha/rok</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-10/12 border-t-2 border-bg-info m-auto"></div>
+      <div class="flex w-full justify-center p-3">
+        <div class="section-name">SADZENIAKI</div>
+        <button class="display-state-button">Pokaż</button>
+      </div>
+      <div class="show-hide-content">
+        <div class="flex justify-around flex-wrap">
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Cena sadzeniaków kwalifikowanych:</div>
+            <div class="flex">
+              <input type="text" class="section-13" id="section-13-input-1" placeholder="2200" value="2200" />
+              <div class="ml-2 text-xl flex items-center">zł/t</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Cena sadzeniaków własnych:</div>
+            <div class="flex">
+              <input type="text" class="section-13" id="section-13-input-2" placeholder="446" value="446" />
+              <div class="ml-2 text-xl flex items-center">zł/t</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Udział sadzeniaków kwalifikowanych:</div>
+            <div class="flex">
+              <input type="text" class="section-13" id="section-13-input-3" placeholder="25" value="25" />
+              <div class="ml-2 text-xl flex items-center">%</div>
+            </div>
+          </div>
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Liczba sadzeniaków kwalifikowanych na ha:</div>
+            <div class="flex">
+              <input type="text" class="section-13" id="section-13-input-4" placeholder="2.3" value="2.3" />
+              <div class="ml-2 text-xl flex items-center">t/ha</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Liczba sadzeniaków własnych na ha:</div>
+            <div class="flex">
+              <input type="text" class="section-13" id="section-13-input-5" placeholder="2.6" value="2.6" />
+              <div class="ml-2 text-xl flex items-center">t/ha</div>
+            </div>
+
+            <div class="flex justify-center text-2xl mt-14 w-full items-center h-fit">
+              <div class="p-1">Koszt:</div>
+              <div class="p-1 ml-2 text-top-agrar-green" id="section-13-result-1">2134.70 zł/ha/rok</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-10/12 border-t-2 border-bg-info m-auto"></div>
+      <div class="flex w-full justify-center p-3">
+        <div class="section-name">ODKAMIENIANIE</div>
+        <button class="display-state-button">Pokaż</button>
+      </div>
+      <div class="show-hide-content">
+        <div class="flex justify-around flex-wrap">
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Koszt odkamieniarki:</div>
+            <div class="flex">
+              <input type="text" class="section-14" id="section-14-input-1" placeholder="750" value="750" />
+              <div class="ml-2 text-xl flex items-center">zł/godz.</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Liczba ha na godzinę:</div>
+            <div class="flex">
+              <input type="text" class="section-14" id="section-14-input-2" placeholder="0.8" value="0.8" />
+              <div class="ml-2 text-xl flex items-center">ha/godz.</div>
+            </div>
+            <div class="flex justify-center text-2xl mt-5 w-full items-center h-fit">
+              <div class="p-1">Koszt:</div>
+              <div class="p-1 ml-2 text-top-agrar-green" id="section-14-result-1">937.50 zł/ha/rok</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-10/12 border-t-2 border-bg-info m-auto"></div>
+      <div class="flex w-full justify-center p-3">
+        <div class="section-name">ZABIEGI WIOSENNE</div>
+        <button class="display-state-button">Pokaż</button>
+      </div>
+      <div class="show-hide-content">
+        <div class="flex justify-around flex-wrap">
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Płytka uprawa:</div>
+            <div class="flex">
+              <input type="text" class="section-15" id="section-15-input-1" placeholder="110" value="110" />
+              <div class="ml-2 text-xl flex items-center">zł/ha</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Uprawa przed sadzeniem:</div>
+            <div class="flex">
+              <input type="text" class="section-15" id="section-15-input-2" placeholder="120" value="120" />
+              <div class="ml-2 text-xl flex items-center">zł/ha</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Sadzenie:</div>
+            <div class="flex">
+              <input type="text" class="section-15" id="section-15-input-3" placeholder="170" value="170" />
+              <div class="ml-2 text-xl flex items-center">zł/ha</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Obsypywanie:</div>
+            <div class="flex">
+              <input type="text" class="section-15" id="section-15-input-4" placeholder="120" value="120" />
+              <div class="ml-2 text-xl flex items-center">zł/ha</div>
+            </div>
+          </div>
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Formowanie redlin:</div>
+            <div class="flex">
+              <input type="text" class="section-15" id="section-15-input-5" placeholder="120" value="120" />
+              <div class="ml-2 text-xl flex items-center">zł/ha</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Opielanie mechaniczne:</div>
+            <div class="flex">
+              <input type="text" class="section-15" id="section-15-input-6" placeholder="170" value="170" />
+              <div class="ml-2 text-xl flex items-center">zł/ha</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Korekta redlin:</div>
+            <div class="flex">
+              <input type="text" class="section-15" id="section-15-input-7" placeholder="100" value="100" />
+              <div class="ml-2 text-xl flex items-center">zł/ha</div>
+            </div>
+            <div class="flex justify-center text-2xl mt-14 w-full items-center h-fit">
+              <div class="p-1">Koszt:</div>
+              <div class="p-1 ml-2 text-top-agrar-green" id="section-15-result-1">910.00 zł/ha/rok</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-10/12 border-t-2 border-bg-info m-auto"></div>
+      <div class="flex w-full justify-center p-3">
+        <div class="section-name">ZBIÓR</div>
+        <button class="display-state-button">Pokaż</button>
+      </div>
+      <div class="show-hide-content">
+        <div class="flex justify-around flex-wrap">
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Kombajn:</div>
+            <div class="flex">
+              <input type="text" class="section-16" id="section-16-input-1" placeholder="320" value="320" />
+              <div class="ml-2 text-xl flex items-center">zł/godz.</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Pracownicy:</div>
+            <div class="flex">
+              <input type="text" class="section-16" id="section-16-input-2" placeholder="80" value="80" />
+              <div class="ml-2 text-xl flex items-center">zł/godz.</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Transport wewnętrzny:</div>
+            <div class="flex">
+              <input type="text" class="section-16" id="section-16-input-3" placeholder="8" value="8" />
+              <div class="ml-2 text-xl flex items-center">zł/km</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Transport do zakładu (całosć):</div>
+            <div class="flex">
+              <input type="text" class="section-16" id="section-16-input-4" placeholder="8" value="8" />
+              <div class="ml-2 text-xl flex items-center">zł/km</div>
+            </div>
+          </div>
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Godziny na ha:</div>
+            <div class="flex">
+              <input type="text" class="section-16" id="section-16-input-5" placeholder="5" value="5" />
+              <div class="ml-2 text-xl flex items-center">godz./ha</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Osoby na kombajn:</div>
+            <div class="flex">
+              <input type="text" class="section-16" id="section-16-input-6" placeholder="2" value="2" />
+              <div class="ml-2 text-xl flex items-center">os./kombajn</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Kilometrów na ha:</div>
+            <div class="flex">
+              <input type="text" class="section-16" id="section-16-input-7" placeholder="2" value="2" />
+              <div class="ml-2 text-xl flex items-center">km/ha</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Ton na zestaw:</div>
+            <div class="flex">
+              <input type="text" class="section-16" id="section-16-input-8" placeholder="20" value="20" />
+              <div class="ml-2 text-xl flex items-center">t/zestaw</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Km od zakładu:</div>
+            <div class="flex">
+              <input type="text" class="section-16" id="section-16-input-9" placeholder="kilometry" value="" />
+              <div class="ml-2 text-xl flex items-center">km</div>
+            </div>
+            <div class="flex justify-center text-2xl mt-14 w-full items-center h-fit">
+              <div class="p-1">Koszt:</div>
+              <div class="p-1 ml-2 text-top-agrar-green" id="section-16-result-1">3534.00.00 zł/ha/rok</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-10/12 border-t-2 border-bg-info m-auto"></div>
+      <div class="flex w-full justify-center p-3">
+        <div class="section-name">ZARZĄDZANIE</div>
+        <button class="display-state-button">Pokaż</button>
+      </div>
+      <div class="show-hide-content">
+        <div class="flex justify-around flex-wrap">
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Ubezpieczenie:</div>
+            <div class="flex">
+              <input type="text" class="section-17" id="section-17-input-1" placeholder="100" value="100" />
+              <div class="ml-2 text-xl flex items-center">zł/ha</div>
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Podatek:</div>
+            <div class="flex">
+              <input type="text" class="section-17" id="section-17-input-2" placeholder="100" value="100" />
+              <div class="ml-2 text-xl flex items-center">zł/ha</div>
+            </div>
+          </div>
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Czynsz dzierżawny:</div>
+            <div class="flex">
+              <input type="text" class="section-17" id="section-17-input-3" placeholder="1300" value="1300" />
+              <div class="ml-2 text-xl flex items-center">zł/ha</div>
+            </div>
+            <div class="flex justify-center text-2xl mt-14 w-full items-center h-fit">
+              <div class="p-1">Koszt:</div>
+              <div class="p-1 ml-2 text-top-agrar-green" id="section-17-result-1">1500.00 zł/ha/rok</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="font-bold flex justify-center text-2xl mb-3 mt-3 w-full 1 items-center h-fit">
+        <div class="p-1">Suma kosztów:</div>
+        <div class="p-1 ml-2 text-top-agrar-green" id="result-2">uzupełnij</div>
       </div>
     </div>
   </body>
