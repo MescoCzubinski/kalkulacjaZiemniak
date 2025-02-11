@@ -20,3 +20,23 @@ select.visited {
   @apply border-black;
   @apply text-black;
 }
+.show-hide-content {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+}
+.section {
+  @apply w-80 flex flex-col justify-start p-3;
+}
+.section-name {
+  @apply text-2xl font-bold flex items-center justify-center h-full w-fit;
+}
+.display-state-button {
+  @apply text-lg text-center p-1 m-1 ml-5 border-bg-info border-2 rounded-2xl hover:bg-bg-info/30;
+}
+/* .section-input {
+  @apply flex flex-col;
+} */
+input {
+  @apply w-24 h-12 pl-2 text-xl border-2 border-bg-info rounded-2xl rounded-l-3xl flex-1 hover:bg-bg-info/25;
+}

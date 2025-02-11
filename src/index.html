@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tytuł kalkulatora</title>
+    <title>Kalkulator opłacalności ziemniaka</title>
     <link rel="stylesheet" href="output.css" />
 
     <!-- fonty -->
@@ -15,27 +15,133 @@
   <body class="m-0 p-0 bg-top-agrar-green/10 flex justify-center font-body">
     <div class="m-3 bg-white rounded-3xl container flex flex-col justify-start">
       <div class="header m-3 flex justify-between">
-        <div class="text-2xl font-header font-bold flex justify-center items-center flex-1"><p>Tytuł kalkulatora</p></div>
+        <div class="text-2xl font-header font-bold flex justify-center items-center flex-1"><p>Kalkulator opłacalności ziemniaka (pyry - dla wielkopolan)</p></div>
         <div class="h-full flex items-center justify-center">
           <button id="reset" class="w-24 h-12 flex items-center justify-center border-top-agrar-green border-2 rounded-3xl text-2xl text-top-agrar-green hover:bg-top-agrar-green/25">Resetuj</button>
         </div>
       </div>
-      <div class="content mt-5 flex justify-around flex-wrap">
-        <div class="section w-80 p-3 flex flex-col justify-start">
-          <div class="mb-5 section-name text-lg font-bold text-center">NAZWA SEKCJI</div>
-          <div class="section-content">
-            <div class="input mb-5 flex">
-              <input type="text" class="w-24 h-12 pl-2 text-xl border-2 border-bg-info rounded-3xl flex-1 hover:bg-bg-info/25" id="" placeholder="podaj wartość x" />
-              <div class="ml-2 text-xl flex items-center">jednostka</div>
+      <div class="flex w-full justify-center p-3">
+        <div class="section-name">PRZYCHODY Z PLONU</div>
+        <button class="display-state-button">Pokaż</button>
+      </div>
+      <div class="show-hide-content">
+        <div class="flex justify-around flex-wrap">
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Powierzchnia uprawy:</div>
+            <div class="flex">
+              <input type="text" class="section-2 section-3" id="section-2-input-1" placeholder="podaj powierzchnię pola" />
+              <div class="ml-2 text-xl flex items-center">ha</div>
             </div>
-            <div class="info mb-5">
-              <div class="text-2xl text-center">Tu wpisz tekst do wyświetlenia, np. wynik:</div>
-              <div class="text-3xl mt-4 text-top-agrar-green text-center">wynik j<sup>2</sup></div>
+
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Zakładany plon z 1 ha:</div>
+            <div class="flex">
+              <input type="text" class="section-1 section-2" id="section-1-input-2" placeholder="podaj zakładany plon" />
+              <div class="ml-2 text-xl flex items-center">dt/ha</div>
+            </div>
+
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Plon kontraktowy z 1 ha:</div>
+            <div class="flex">
+              <input type="text" class="section-1 section-2 section-3" id="section-1-input-3" placeholder="podaj kontraktowy plon" />
+              <div class="ml-2 text-xl flex items-center">dt/ha</div>
+            </div>
+
+            <div class="flex justify-between text-xl mt-5 w-full items-center h-fit">
+              <div class="p-1 w-fit">Plon pozakontraktowy:</div>
+              <div class="p-1 ml-2 w-fit felx-1 text-top-agrar-green" class="section-1" id="section-1-result-1">uzupełnij</div>
             </div>
           </div>
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Zawartość skrobi w umowe:</div>
+            <div class="flex">
+              <input type="text" class="section-3" id="section-3-input-1" placeholder="podaj zawartość skrobi" />
+              <div class="ml-2 text-xl flex items-center">%</div>
+            </div>
+
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Cena ziemniaków kontraktowych:</div>
+            <div class="flex">
+              <input type="text" class="section-2" id="section-2-input-2" placeholder="podaj cenę kontraktową" />
+              <div class="ml-2 text-xl flex items-center">dt/ha</div>
+            </div>
+
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Cena ziemniaków pozakontraktowych:</div>
+            <div class="flex">
+              <input type="text" class="section-2" id="section-2-input-3" placeholder="podaj cenę pozakontraktową" />
+              <div class="ml-2 text-xl flex items-center">dt/ha</div>
+            </div>
+
+            <div class="flex justify-between text-xl mt-5 w-full items-center h-fit">
+              <div class="p-1 w-fit">Wartość ziemniaków kontraktowych:</div>
+              <div class="p-1 ml-2 w-fit felx-1 text-nowrap text-top-agrar-green" id="section-2-result-1">uzupełnij</div>
+            </div>
+
+            <div class="flex justify-between text-xl mt-5 w-full items-center h-fit">
+              <div class="p-1 w-fit">Wartość ziemniaków poza kontraktem:</div>
+              <div class="p-1 ml-2 w-fit felx-1 text-top-agrar-green" id="section-2-result-2">uzupełnij</div>
+            </div>
+
+            <div class="flex justify-between text-xl mt-5 w-full items-center h-fit">
+              <div class="p-1 w-fit">Wartość plonu:</div>
+              <div class="p-1 ml-2 w-fit felx-1 text-top-agrar-green" id="section-2-result-3">uzupełnij</div>
+            </div>
+          </div>
+          <div class="section">
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Stawka dopłaty do transportu:</div>
+            <div class="flex flex-col mt-2 mb-2 text-xl">
+              <div class=""><input type="radio" name="option" class="h-6" checked class="section-3" id="section-3-radio-1" /> ziemniaka</div>
+              <div class=""><input type="radio" name="option" class="h-6" class="section-3" id="section-3-radio-2" /> skrobi</div>
+            </div>
+
+            <div class="flex">
+              <input type="text" class="section-3" id="section-3-input-2" placeholder="podaj stawkę" />
+              <div class="ml-2 text-xl flex items-center">zł</div>
+            </div>
+
+            <div class="flex justify-between text-xl mt-2 w-full items-center h-fit">
+              <div class="p-1 w-fit">Wysokość tej dopłaty:</div>
+              <div class="p-1 ml-2 w-fit felx-1 text-nowrap text-top-agrar-green" id="section-3-result-1">uzupełnij</div>
+            </div>
+
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Dopłata za wczesny termin:</div>
+            <div class="flex">
+              <input type="text" placeholder="podaj stawkę" class="section-4" id="section-4-input-1" />
+              <div class="ml-2 text-xl flex items-center">zł/dt</div>
+            </div>
+
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Ziemniaki wcześnie dostarczone (z całości):</div>
+            <div class="flex">
+              <input type="text" placeholder="podaj ilość" class="section-4" id="section-4-input-2" />
+              <div class="ml-2 text-xl flex items-center">dt</div>
+            </div>
+
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Dopłata za późny termin:</div>
+            <div class="flex">
+              <input type="text" placeholder="podaj stawkę" class="section-4" id="section-4-input-3" />
+              <div class="ml-2 text-xl flex items-center">zł/dt</div>
+            </div>
+
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Ziemniaki późno dostarczone&nbsp;&nbsp;&nbsp;&nbsp; (z całości):</div>
+            <div class="flex">
+              <input type="text" placeholder="podaj ilość" class="section-4" id="section-4-input-4" />
+              <div class="ml-2 text-xl flex items-center">dt</div>
+            </div>
+
+            <div class="flex justify-between text-xl mt-5 w-full items-center h-fit">
+              <div class="p-1 w-fit">Razem dopłaty odbiorcy:</div>
+              <div class="p-1 ml-2 w-fit felx-1 text-top-agrar-green" id="section-4-result-1">uzupełnij</div>
+            </div>
+          </div>
+        </div>
+        <div class="flex text-2xl pb-5 font-bold w-full justify-center">
+          <div class="p-1">Razem za ziemniaki</div>
+          <div class="p-1 ml-2 text-top-agrar-green" id="section-5-result-1">uzupełnij</div>
         </div>
       </div>
     </div>
   </body>
   <script src="script.js"></script>
 </html>
+
+<!-- <div class="info mb-2 ml-2 mt-5">
+    <div class="text-2xl text-center">Tu wpisz tekst do wyświetlenia, np. wynik:</div>
+    <div class="text-3xl mt-4 text-top-agrar-green text-center">wynik j<sup>2</sup></div>
+  </div> -->
