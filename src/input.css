@@ -12,7 +12,8 @@
 }
 @media only screen and (max-width: 960px) {
   .container {
-    width: 95%;
+    width: 100%;
+    margin: 2px;
   }
 }
 input.visited,
@@ -54,4 +55,12 @@ input[type="checkbox"]:disabled {
 }
 input[type="checkbox"]:checked {
   @apply bg-top-agrar-green/25;
+}
+.space {
+  @apply w-10/12 border-t-2 border-bg-info m-auto;
+}
+@media only screen and (max-width: 425px) {
+  .space {
+    width: 97.5%;
+  }
 }

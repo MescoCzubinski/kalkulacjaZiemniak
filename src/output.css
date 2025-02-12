@@ -628,10 +628,6 @@ video {
   margin-top: 0.75rem;
 }
 
-.mt-4 {
-  margin-top: 1rem;
-}
-
 .mt-5 {
   margin-top: 1.25rem;
 }
@@ -654,6 +650,10 @@ video {
 
 .h-14 {
   height: 3.5rem;
+}
+
+.h-8 {
+  height: 2rem;
 }
 
 .h-fit {
@@ -765,10 +765,6 @@ video {
   text-align: left;
 }
 
-.text-center {
-  text-align: center;
-}
-
 .font-body {
   font-family: Lato;
 }
@@ -780,11 +776,6 @@ video {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
 }
 
 .text-lg {
@@ -828,7 +819,8 @@ video {
 
 @media only screen and (max-width: 960px) {
   .container {
-    width: 95%;
+    width: 100%;
+    margin: 2px;
   }
 }
 
@@ -942,6 +934,20 @@ input[type="checkbox"]:disabled {
 
 input[type="checkbox"]:checked {
   background-color: rgb(0 132 55 / 0.25);
+}
+
+.space {
+  margin: auto;
+  width: 83.333333%;
+  border-top-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(163 163 163 / var(--tw-border-opacity, 1));
+}
+
+@media only screen and (max-width: 425px) {
+  .space {
+    width: 97.5%;
+  }
 }
 
 .hover\:bg-top-agrar-green\/25:hover {
