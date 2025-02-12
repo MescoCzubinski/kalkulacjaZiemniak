@@ -596,10 +596,6 @@ video {
   margin: 0.75rem;
 }
 
-.m-auto {
-  margin: auto;
-}
-
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -616,6 +612,10 @@ video {
   margin-left: 0.5rem;
 }
 
+.mt-12 {
+  margin-top: 3rem;
+}
+
 .mt-14 {
   margin-top: 3.5rem;
 }
@@ -626,6 +626,10 @@ video {
 
 .mt-3 {
   margin-top: 0.75rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .mt-5 {
@@ -726,15 +730,6 @@ video {
   border-width: 2px;
 }
 
-.border-t-2 {
-  border-top-width: 2px;
-}
-
-.border-bg-info {
-  --tw-border-opacity: 1;
-  border-color: rgb(163 163 163 / var(--tw-border-opacity, 1));
-}
-
 .border-top-agrar-green {
   --tw-border-opacity: 1;
   border-color: rgb(0 132 55 / var(--tw-border-opacity, 1));
@@ -808,6 +803,7 @@ video {
 }
 
 .container {
+  margin-top: 4px;
   width: 960px;
 }
 
@@ -819,8 +815,7 @@ video {
 
 @media only screen and (max-width: 960px) {
   .container {
-    width: 100%;
-    margin: 2px;
+    width: 98%;
   }
 }
 
@@ -866,6 +861,8 @@ select.visited {
   --tw-border-opacity: 1;
   border-color: rgb(163 163 163 / var(--tw-border-opacity, 1));
   padding: 0.25rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
   text-align: center;
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -896,6 +893,7 @@ input[type="text"]:hover {
 
 input[type="checkbox"] {
   margin-right: 1rem;
+  aspect-ratio: 1 / 1;
   height: 3rem;
   width: 3rem;
   border-radius: 1rem;
@@ -913,6 +911,8 @@ input[type="checkbox"]:hover {
 
 input[type="checkbox"] {
   -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   position: relative;
 }
 

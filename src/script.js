@@ -341,6 +341,8 @@ let sec13in2 = document.querySelector("#section-13-input-2");
 let sec13in3 = document.querySelector("#section-13-input-3");
 let sec13in4 = document.querySelector("#section-13-input-4");
 let sec13in5 = document.querySelector("#section-13-input-5");
+let sec13ch1 = document.querySelector("#check-section-13-part-1");
+let sec13ch2 = document.querySelector("#check-section-13-part-2");
 let sec13res1 = document.querySelector("#section-13-result-1");
 sec13in3.addEventListener("input", function () {
   if (Number(sec13in3.value) > 100) {
@@ -352,13 +354,24 @@ document.querySelectorAll(".section-13").forEach((input) => {
     sec13in3.value = 0;
   }
   input.addEventListener("input", function () {
-    let result = (Number(sec13in1.value) * Number(sec13in4.value) * Number(sec13in3.value)) / 100 + (Number(sec13in2.value) * Number(sec13in5.value) * (100 - Number(sec13in3.value))) / 100;
-
+    let result = 0;
+    if (sec13ch1.checked) {
+      result += (Number(sec13in1.value) * Number(sec13in4.value) * Number(sec13in3.value)) / 100;
+    }
+    if (sec13ch2.checked) {
+      result += (Number(sec13in2.value) * Number(sec13in5.value) * (100 - Number(sec13in3.value))) / 100;
+    }
+    if (!sec13ch2.checked && !sec13ch1.checked) {
+      result = 0;
+    }
     if (result > 100000000) {
       result = "za dużo";
     }
-    if (result !== 0 && result !== Infinity) {
+    if (result !== Infinity) {
       sec13res1.innerHTML = result.toLocaleString("pl-PL", { minimumFractionDigits: 0, maximumFractionDigits: 2 }) + " zł/ha/rok";
+    }
+    if (result === 0) {
+      sec13res1.innerHTML = "kliknij + by policzyć";
     }
     recalculateSectionHeight();
   });
@@ -469,17 +482,29 @@ let res3 = document.querySelector("#result-3");
 let res4 = document.querySelector("#result-4");
 let res5 = document.querySelector("#result-5");
 let res6 = document.querySelector("#result-6");
+let check7 = document.querySelector("#check-section-7");
+let check8 = document.querySelector("#check-section-8");
+let check9 = document.querySelector("#check-section-9");
+let check12 = document.querySelector("#check-section-12");
+let check13 = document.querySelector("#check-section-13");
+let check14 = document.querySelector("#check-section-14");
 document.querySelectorAll("input").forEach((input) => {
   input.addEventListener("input", function () {
     let r1 = parseFloat(res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
     let s7 = parseFloat(sec7res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
+    if (!check7.checked) s7 = 0;
     let s8 = parseFloat(sec8res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
+    if (!check8.checked) s8 = 0;
     let s9 = parseFloat(sec9res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
+    if (!check9.checked) s9 = 0;
     let s10 = parseFloat(sec10res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
     let s11 = parseFloat(sec11res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
     let s12 = parseFloat(sec12res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
+    if (!check12.checked) s12 = 0;
     let s13 = parseFloat(sec13res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
+    if (!check13.checked) s13 = 0;
     let s14 = parseFloat(sec14res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
+    if (!check14.checked) s14 = 0;
     let s15 = parseFloat(sec15res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
     let s16 = parseFloat(sec16res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
     let s17 = parseFloat(sec17res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;

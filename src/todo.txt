@@ -1,10 +1,7 @@
 40 min 14:00->
 
 TOKNOW: zmiana jednej wartości w nawozach naturlanych - zapsane, żeby nie uciekło
-TODO: skrócić ostatnie 6 linijek
 TODO: checkboxy:
--badanie gleby, wapno, międzyplon, nawozy naturlane, glifosat, odkamienianie - po jednym plusie
 -zabiegi jesienne, zabiegi wiosenne, zarządzanie - plus przy każdej ramce
--sadzeniaki - plus przy kupionych i włąsnych
 
 TODO: dynamicznie dostawiane kolejne punkty

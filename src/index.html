@@ -13,14 +13,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
   </head>
   <body class="m-0 p-0 bg-top-agrar-green/10 flex justify-center font-body">
-    <div class="m-3 bg-white rounded-3xl container flex flex-col justify-start">
-      <div class="header m-3 flex justify-between">
+    <div class="bg-white rounded-3xl container flex flex-col justify-start items-center">
+      <div class="header m-3 w-10/12 flex justify-between">
         <div class="text-2xl font-header font-bold flex justify-center items-center flex-1"><p>Kalkulator opłacalności ziemniaka skrobiowego</p></div>
         <div class="h-full flex items-center justify-center">
           <button id="reset" class="w-24 h-12 flex items-center justify-center border-top-agrar-green border-2 rounded-3xl text-2xl text-top-agrar-green hover:bg-top-agrar-green/25">Resetuj</button>
         </div>
       </div>
-      <div class="flex w-full justify-center p-3">
+      <div class="flex w-10/12 justify-between p-3">
         <div class="section-name">PRZYCHODY Z PLONU</div>
         <button class="display-state-button">Rozwiń</button>
       </div>
@@ -87,72 +87,70 @@
         </div>
       </div>
       <div class="space"></div>
-      <div>
-        <div class="flex w-full justify-center p-3">
-          <div class="section-name">DOPŁATY PRZETWÓRCY</div>
-          <button class="display-state-button">Rozwiń</button>
-        </div>
-        <div class="show-hide-content flex justify-around flex-wrap">
-          <div class="section">
-            <div class="text-xl text-left mb-2 ml-2 mt-5">Stawka dopłaty do transportu:</div>
-            <div class="flex flex-col mt-2 mb-2 text-xl">
-              <label>
-                <div class=""><input type="radio" name="option" class="" checked class="section-3" id="section-3-radio-1" /> ziemniaka</div>
-              </label>
-              <label>
-                <div class=""><input type="radio" name="option" class="" class="section-3" id="section-3-radio-2" /> skrobi</div>
-              </label>
-            </div>
-
-            <div class="flex">
-              <input type="text" class="section-3" id="section-3-input-2" placeholder="podaj stawkę" />
-              <div class="ml-2 text-xl flex items-center">zł/dt</div>
-            </div>
-
-            <div class="flex justify-between text-xl mt-2 w-full items-center h-fit">
-              <div class="p-1 w-fit">Wysokość dopłaty:</div>
-              <div class="p-1 ml-2 w-fit felx-1 text-top-agrar-green text-nowrap" id="section-3-result-1">podaj wartości</div>
-            </div>
+      <div class="flex w-10/12 justify-between p-3">
+        <div class="section-name">DOPŁATY PRZETWÓRCY</div>
+        <button class="display-state-button">Rozwiń</button>
+      </div>
+      <div class="show-hide-content flex justify-around flex-wrap">
+        <div class="section">
+          <div class="text-xl text-left mb-2 ml-2 mt-5">Stawka dopłaty do transportu:</div>
+          <div class="flex flex-col mt-2 mb-2 text-xl">
+            <label>
+              <div class=""><input type="radio" name="option" class="" checked class="section-3" id="section-3-radio-1" /> ziemniaka</div>
+            </label>
+            <label>
+              <div class=""><input type="radio" name="option" class="" class="section-3" id="section-3-radio-2" /> skrobi</div>
+            </label>
           </div>
-          <div class="section">
-            <div class="text-xl text-left mb-2 ml-2 mt-5">Dopłata za wczesny termin:</div>
-            <div class="flex">
-              <input type="text" placeholder="podaj stawkę" class="section-4" id="section-4-input-1" />
-              <div class="ml-2 text-xl flex items-center">zł/dt</div>
-            </div>
 
-            <div class="text-xl text-left mb-2 ml-2 mt-5">Ziemniaki wcześnie dostarczone (z całości):</div>
-            <div class="flex">
-              <input type="text" placeholder="podaj ilość" class="section-4" id="section-4-input-2" />
-              <div class="ml-2 text-xl flex items-center">dt</div>
-            </div>
+          <div class="flex">
+            <input type="text" class="section-3" id="section-3-input-2" placeholder="podaj stawkę" />
+            <div class="ml-2 text-xl flex items-center">zł/dt</div>
+          </div>
 
-            <div class="text-xl text-left mb-2 ml-2 mt-5">Dopłata za późny termin:</div>
-            <div class="flex">
-              <input type="text" placeholder="podaj stawkę" class="section-4" id="section-4-input-3" />
-              <div class="ml-2 text-xl flex items-center">zł/dt</div>
-            </div>
-
-            <div class="text-xl text-left mb-2 ml-2 mt-5">Ziemniaki późno dostarczone&nbsp;&nbsp;&nbsp;&nbsp; (z całości):</div>
-            <div class="flex">
-              <input type="text" placeholder="podaj ilość" class="section-4" id="section-4-input-4" />
-              <div class="ml-2 text-xl flex items-center">dt</div>
-            </div>
-
-            <div class="flex justify-between text-xl mt-5 w-full items-center h-fit">
-              <div class="p-1 w-fit">Razem dopłaty odbiorcy:</div>
-              <div class="p-1 ml-2 w-fit felx-1 text-nowrap text-top-agrar-green" id="section-4-result-1">podaj wartości</div>
-            </div>
+          <div class="flex justify-between text-xl mt-2 w-full items-center h-fit">
+            <div class="p-1 w-fit">Wysokość dopłaty:</div>
+            <div class="p-1 ml-2 w-fit felx-1 text-top-agrar-green text-nowrap" id="section-3-result-1">podaj wartości</div>
           </div>
         </div>
-        <div class="font-bold flex justify-center text-2xl mb-5 p-3 w-full items-center h-fit">
-          <div class="p-1">Razem za ziemniaki:</div>
-          <div class="p-1 ml-2 text-nowrap text-top-agrar-green" id="section-5-result-1">podaj wartości</div>
+        <div class="section">
+          <div class="text-xl text-left mb-2 ml-2 mt-5">Dopłata za wczesny termin:</div>
+          <div class="flex">
+            <input type="text" placeholder="podaj stawkę" class="section-4" id="section-4-input-1" />
+            <div class="ml-2 text-xl flex items-center">zł/dt</div>
+          </div>
+
+          <div class="text-xl text-left mb-2 ml-2 mt-5">Ziemniaki wcześnie dostarczone (z całości):</div>
+          <div class="flex">
+            <input type="text" placeholder="podaj ilość" class="section-4" id="section-4-input-2" />
+            <div class="ml-2 text-xl flex items-center">dt</div>
+          </div>
+
+          <div class="text-xl text-left mb-2 ml-2 mt-5">Dopłata za późny termin:</div>
+          <div class="flex">
+            <input type="text" placeholder="podaj stawkę" class="section-4" id="section-4-input-3" />
+            <div class="ml-2 text-xl flex items-center">zł/dt</div>
+          </div>
+
+          <div class="text-xl text-left mb-2 ml-2 mt-5">Ziemniaki późno dostarczone&nbsp;&nbsp;&nbsp;&nbsp; (z całości):</div>
+          <div class="flex">
+            <input type="text" placeholder="podaj ilość" class="section-4" id="section-4-input-4" />
+            <div class="ml-2 text-xl flex items-center">dt</div>
+          </div>
+
+          <div class="flex justify-between text-xl mt-5 w-full items-center h-fit">
+            <div class="p-1 w-fit">Razem dopłaty odbiorcy:</div>
+            <div class="p-1 ml-2 w-fit felx-1 text-nowrap text-top-agrar-green" id="section-4-result-1">podaj wartości</div>
+          </div>
         </div>
+      </div>
+      <div class="font-bold flex justify-center text-2xl mb-5 p-3 w-full items-center h-fit">
+        <div class="p-1">Razem za ziemniaki:</div>
+        <div class="p-1 ml-2 text-nowrap text-top-agrar-green" id="section-5-result-1">podaj wartości</div>
       </div>
       <div class="space"></div>
 
-      <div class="flex w-full justify-center p-3">
+      <div class="flex w-10/12 justify-between p-3">
         <div class="section-name">DOPŁATY I EKOSCHEMATY*</div>
         <button class="display-state-button">Rozwiń</button>
       </div>
@@ -250,7 +248,7 @@
       </div>
 
       <div class="space"></div>
-      <div class="flex w-full justify-center p-3">
+      <div class="flex w-10/12 justify-between p-3">
         <div class="section-name">BADANIE GLEBY</div>
         <button class="display-state-button">Rozwiń</button>
       </div>
@@ -259,31 +257,35 @@
           <div class="section">
             <div class="text-xl text-left mb-2 ml-2 mt-5">Cena:</div>
             <div class="flex">
-              <input type="text" class="section-7" id="section-7-input-1" placeholder="cena próbki" value="12" />
+              <input type="text" class="section-7" id="section-7-input-1" placeholder="koszt 1 próbki" />
               <div class="ml-2 text-xl flex items-center">zł/próbkę</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Liczba próbek:</div>
             <div class="flex">
-              <input type="text" class="section-7" id="section-7-input-2" placeholder="liczba próbek na ha" value="0.5" />
+              <input type="text" class="section-7" id="section-7-input-2" placeholder="liczba próbek na 1 ha" />
               <div class="ml-2 text-xl flex items-center">próbek/ha</div>
             </div>
           </div>
           <div class="section">
             <div class="text-xl text-left mb-2 ml-2 mt-5">Częstość:</div>
             <div class="flex">
-              <input type="text" class="section-7" id="section-7-input-3" placeholder="na ile lat" value="3" />
+              <input type="text" class="section-7" id="section-7-input-3" placeholder="co ile lat badanie" />
               <div class="ml-2 text-xl flex items-center">lat</div>
             </div>
-            <div class="flex justify-center text-2xl mt-14 w-full items-center h-fit">
+            <div class="flex flex-wrap h-fit items-center justify-between mt-14 ml-2">
+              <div class="text-xl text-left">Dodaj do kalkulacji:</div>
+              <input type="checkbox" class="check" id="check-section-7" />
+            </div>
+            <div class="flex justify-center text-2xl w-full items-center mt-5 h-fit">
               <div class="p-1">Koszt:</div>
-              <div class="p-1 ml-2 text-top-agrar-green text-nowrap" id="section-7-result-1">2,00 zł/ha/rok</div>
+              <div class="p-1 ml-2 text-top-agrar-green text-nowrap" id="section-7-result-1">podaj wartości</div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="space"></div>
-      <div class="flex w-full justify-center p-3">
+      <div class="flex w-10/12 justify-between p-3">
         <div class="section-name">WAPNO</div>
         <button class="display-state-button">Rozwiń</button>
       </div>
@@ -292,42 +294,45 @@
           <div class="section">
             <div class="text-xl text-left mb-2 ml-2 mt-5">Koszt wapna:</div>
             <div class="flex">
-              <input type="text" class="section-8" id="section-8-input-1" placeholder="cena wapna" value="220" />
+              <input type="text" class="section-8" id="section-8-input-1" placeholder="koszt 1 t wapna" />
               <div class="ml-2 text-xl flex items-center">zł/t</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Koszt rozsiewu:</div>
             <div class="flex">
-              <input type="text" class="section-8" id="section-8-input-2" placeholder="koszt rozsiewu" value="120" />
+              <input type="text" class="section-8" id="section-8-input-2" placeholder="koszt rozsiewu na 1 ha" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Koszt załadunku:</div>
             <div class="flex">
-              <input type="text" class="section-8" id="section-8-input-3" placeholder="koszt załadunku" value="12" />
+              <input type="text" class="section-8" id="section-8-input-3" placeholder="koszt załadunku 1 t" />
               <div class="ml-2 text-xl flex items-center">zł/t</div>
             </div>
           </div>
           <div class="section">
             <div class="text-xl text-left mb-2 ml-2 mt-5">Dawka na ha:</div>
             <div class="flex">
-              <input type="text" class="section-8" id="section-8-input-4" placeholder="ile t na ha" value="2.5" />
+              <input type="text" class="section-8" id="section-8-input-4" placeholder="dawka na 1 ha" />
               <div class="ml-2 text-xl flex items-center">t/ha</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Częstotliwość:</div>
             <div class="flex">
-              <input type="text" class="section-8" id="section-8-input-5" placeholder="na ile lat" value="4" />
+              <input type="text" class="section-8" id="section-8-input-5" placeholder="co ile lat" />
               <div class="ml-2 text-xl flex items-center">lat</div>
             </div>
-
-            <div class="flex justify-center text-2xl mt-14 w-full items-center h-fit">
+            <div class="flex flex-wrap h-fit items-center justify-between mt-14 ml-2">
+              <div class="text-xl text-left">Dodaj do kalkulacji:</div>
+              <input type="checkbox" class="check" id="check-section-8" />
+            </div>
+            <div class="flex justify-center text-2xl mt-5 w-full items-center h-fit">
               <div class="p-1">Koszt:</div>
-              <div class="p-1 ml-2 text-top-agrar-green text-nowrap" id="section-8-result-1">175 zł/ha/rok</div>
+              <div class="p-1 ml-2 text-top-agrar-green text-nowrap" id="section-8-result-1">podaj wartości</div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="space"></div>
-      <div class="flex w-full justify-center p-3">
+      <div class="flex w-10/12 justify-between p-3">
         <div class="section-name">MIĘDZYPLON</div>
         <button class="display-state-button">Rozwiń</button>
       </div>
@@ -336,37 +341,40 @@
           <div class="section">
             <div class="text-xl text-left mb-2 ml-2 mt-5">Cena nasion:</div>
             <div class="flex">
-              <input type="text" class="section-9" id="section-9-input-1" placeholder="cena nasion" value="125" />
+              <input type="text" class="section-9" id="section-9-input-1" placeholder="cena 1 kg nasion międzyplonu" />
               <div class="ml-2 text-xl flex items-center">zł/kg</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Koszt siewu:</div>
             <div class="flex">
-              <input type="text" class="section-9" id="section-9-input-2" placeholder="cena siewu" value="120" />
+              <input type="text" class="section-9" id="section-9-input-2" placeholder="koszt siewu" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
           </div>
           <div class="section">
             <div class="text-xl text-left mb-2 ml-2 mt-5">Dawka nasion na hektar:</div>
             <div class="flex">
-              <input type="text" class="section-9" id="section-9-input-3" placeholder="ile t na ha" value="6.6" />
+              <input type="text" class="section-9" id="section-9-input-3" placeholder="dawka nasion" />
               <div class="ml-2 text-xl flex items-center">kg/ha</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Częstotliwość:</div>
             <div class="flex">
-              <input type="text" class="section-9" id="section-9-input-4" placeholder="na ile lat" value="4" />
+              <input type="text" class="section-9" id="section-9-input-4" placeholder="co ile lat" />
               <div class="ml-2 text-xl flex items-center">lat</div>
             </div>
-
-            <div class="flex justify-center text-2xl mt-14 w-full items-center h-fit">
+            <div class="flex flex-wrap h-fit items-center justify-between mt-5 ml-2">
+              <div class="text-xl text-left">Dodaj do kalkulacji:</div>
+              <input type="checkbox" class="check" id="check-section-9" />
+            </div>
+            <div class="flex justify-center text-2xl mt-5 w-full items-center h-fit">
               <div class="p-1">Koszt:</div>
-              <div class="p-1 ml-2 text-top-agrar-green text-nowrap" id="section-9-result-1">236,25 zł/ha/rok</div>
+              <div class="p-1 ml-2 text-top-agrar-green text-nowrap" id="section-9-result-1">podaj wartości</div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="space"></div>
-      <div class="flex w-full justify-center p-3">
+      <div class="flex w-10/12 justify-between p-3">
         <div class="section-name">NAWOZY NATURALNE</div>
         <button class="display-state-button">Rozwiń</button>
       </div>
@@ -375,42 +383,45 @@
           <div class="section">
             <div class="text-xl text-left mb-2 ml-2 mt-5">Cena nawozu:</div>
             <div class="flex">
-              <input type="text" class="section-10" id="section-10-input-1" placeholder="230" value="230" />
+              <input type="text" class="section-10" id="section-10-input-1" placeholder="cena nawozu natur." />
               <div class="ml-2 text-xl flex items-center">zł/t, m<sup>3</sup></div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Koszt stosowania:</div>
             <div class="flex">
-              <input type="text" class="section-10" id="section-10-input-2" placeholder="180" value="180" />
+              <input type="text" class="section-10" id="section-10-input-2" placeholder="koszt rozrzucania/rozlewania" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Koszt załadunku:</div>
             <div class="flex">
-              <input type="text" class="section-10" id="section-10-input-3" placeholder="10" value="10" />
+              <input type="text" class="section-10" id="section-10-input-3" placeholder="koszt załadunku/pompowania" />
               <div class="ml-2 text-xl flex items-center">zł/t</div>
             </div>
           </div>
           <div class="section">
             <div class="text-xl text-left mb-2 ml-2 mt-5">Dawka na ha:</div>
             <div class="flex">
-              <input type="text" class="section-10" id="section-10-input-4" placeholder="20" value="20" />
+              <input type="text" class="section-10" id="section-10-input-4" placeholder="dawka na 1 ha" />
               <div class="ml-2 text-xl flex items-center">t/ha</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Częstotliwość:</div>
             <div class="flex">
-              <input type="text" class="section-10" id="section-10-input-5" placeholder="4" value="4" />
+              <input type="text" class="section-10" id="section-10-input-5" placeholder="co ile lat" />
               <div class="ml-2 text-xl flex items-center">lat</div>
             </div>
-
-            <div class="flex justify-center text-2xl mt-14 w-full items-center h-fit">
+            <div class="flex flex-wrap h-fit items-center justify-between mt-14 ml-2">
+              <div class="text-xl text-left">Dodaj do kalkulacji:</div>
+              <input type="checkbox" class="check" id="check-section-10" />
+            </div>
+            <div class="flex justify-center text-2xl mt-5 w-full items-center h-fit">
               <div class="p-1">Koszt:</div>
-              <div class="p-1 ml-2 text-top-agrar-green text-nowrap" id="section-10-result-1">1245 zł/ha/rok</div>
+              <div class="p-1 ml-2 text-top-agrar-green text-nowrap" id="section-10-result-1">podaj wartości</div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="space"></div>
-      <div class="flex w-full justify-center p-3">
+      <div class="flex w-10/12 justify-between p-3">
         <div class="section-name">ZABIEGI JESIENNE</div>
         <button class="display-state-button">Rozwiń</button>
       </div>
@@ -419,32 +430,32 @@
           <div class="section">
             <div class="text-xl text-left mb-2 ml-2 mt-5">Uprawa po przedplonie:</div>
             <div class="flex">
-              <input type="text" class="section-11" id="section-11-input-1" placeholder="120" value="120" />
+              <input type="text" class="section-11" id="section-11-input-1" placeholder="koszt uprawy, np. 120" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Mulczowanie międzyplonu:</div>
             <div class="flex">
-              <input type="text" class="section-11" id="section-11-input-2" placeholder="140" value="140" />
+              <input type="text" class="section-11" id="section-11-input-2" placeholder="koszt mulczowania np. 140" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
           </div>
           <div class="section">
             <div class="text-xl text-left mb-2 ml-2 mt-5">Uprawa głęboka:</div>
             <div class="flex">
-              <input type="text" class="section-11" id="section-11-input-3" placeholder="220" value="220" />
+              <input type="text" class="section-11" id="section-11-input-3" placeholder="koszt uprawy np. 220" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
 
             <div class="flex justify-center text-2xl mt-14 w-full items-center h-fit">
               <div class="p-1">Koszt:</div>
-              <div class="p-1 ml-2 text-top-agrar-green text-nowrap" id="section-11-result-1">480 zł/ha/rok</div>
+              <div class="p-1 ml-2 text-top-agrar-green text-nowrap" id="section-11-result-1">podaj wartości</div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="space"></div>
-      <div class="flex w-full justify-center p-3">
+      <div class="flex w-10/12 justify-between p-3">
         <div class="section-name">GLIFOSAT</div>
         <button class="display-state-button">Rozwiń</button>
       </div>
@@ -453,82 +464,94 @@
           <div class="section">
             <div class="text-xl text-left mb-2 ml-2 mt-5">Herbicyd z glifosatem:</div>
             <div class="flex">
-              <input type="text" class="section-12" id="section-12-input-1" placeholder="23" value="23" />
+              <input type="text" class="section-12" id="section-12-input-1" placeholder="koszt herbicydu" />
               <div class="ml-2 text-xl flex items-center">zł/l</div>
             </div>
-            <div class="text-xl text-left mb-2 ml-2 mt-5">Adiuwant do glifosatu:</div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Dawka herbicydu na ha:</div>
             <div class="flex">
-              <input type="text" class="section-12" id="section-12-input-2" placeholder="12" value="12" />
-              <div class="ml-2 text-xl flex items-center">zł/, kg</div>
+              <input type="text" class="section-12" id="section-12-input-3" placeholder="dawka herbicydu" />
+              <div class="ml-2 text-xl flex items-center">l/ha</div>
             </div>
           </div>
           <div class="section">
-            <div class="text-xl text-left mb-2 ml-2 mt-5">Dawka herbicydu na ha:</div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Adiuwant do glifosatu:</div>
             <div class="flex">
-              <input type="text" class="section-12" id="section-12-input-3" placeholder="2" value="2" />
-              <div class="ml-2 text-xl flex items-center">l/ha</div>
+              <input type="text" class="section-12" id="section-12-input-2" placeholder="koszt adiuwanta" />
+              <div class="ml-2 text-xl flex items-center">zł/, kg</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Dawka adiuwanta na ha:</div>
             <div class="flex">
-              <input type="text" class="section-12" id="section-12-input-4" placeholder="1" value="1" />
+              <input type="text" class="section-12" id="section-12-input-4" placeholder="dawka adiuwanta" />
               <div class="ml-2 text-xl flex items-center">l/ha</div>
             </div>
-
-            <div class="flex justify-center text-2xl mt-14 w-full items-center h-fit">
+            <div class="flex flex-wrap h-fit items-center justify-between mt-5 ml-2">
+              <div class="text-xl text-left">Dodaj do kalkulacji:</div>
+              <input type="checkbox" class="check" id="check-section-12" />
+            </div>
+            <div class="flex justify-center text-2xl mt-5 w-full items-center h-fit">
               <div class="p-1">Koszt:</div>
-              <div class="p-1 ml-2 text-top-agrar-green" id="section-12-result-1">58 zł/ha/rok</div>
+              <div class="p-1 ml-2 text-top-agrar-green" id="section-12-result-1">podaj wartości</div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="space"></div>
-      <div class="flex w-full justify-center p-3">
+      <div class="flex w-10/12 justify-between p-3">
         <div class="section-name">SADZENIAKI</div>
         <button class="display-state-button">Rozwiń</button>
       </div>
       <div class="show-hide-content">
         <div class="flex justify-around flex-wrap">
           <div class="section">
+            <div class="flex flex-wrap h-fit items-center justify-between mt-5 ml-2">
+              <div class="text-xl text-left">Dodaj sadz. kwalifik.</div>
+              <input type="checkbox" class="check section-13" id="check-section-13-part-1" />
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-5">Dawka sadzeniaków kwalifikowanych na ha:</div>
+            <div class="flex">
+              <input type="text" class="section-13" id="section-13-input-4" placeholder="dawka sadzeniaków kwalif." />
+              <div class="ml-2 text-xl flex items-center">t/ha</div>
+            </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Cena sadzeniaków kwalifikowanych:</div>
             <div class="flex">
-              <input type="text" class="section-13" id="section-13-input-1" placeholder="2200" value="2200" />
+              <input type="text" class="section-13" id="section-13-input-1" placeholder="koszt sadzeniaków kwalif." />
               <div class="ml-2 text-xl flex items-center">zł/t</div>
             </div>
-            <div class="text-xl text-left mb-2 ml-2 mt-5">Cena sadzeniaków własnych:</div>
-            <div class="flex">
-              <input type="text" class="section-13" id="section-13-input-2" placeholder="446" value="446" />
-              <div class="ml-2 text-xl flex items-center">zł/t</div>
-            </div>
+
             <div class="text-xl text-left mb-2 ml-2 mt-5">Udział sadzeniaków kwalifikowanych:</div>
             <div class="flex">
-              <input type="text" class="section-13" id="section-13-input-3" placeholder="25" value="25" />
+              <input type="text" class="section-13" id="section-13-input-3" placeholder="ile % stanowią sadz. kwalif." />
               <div class="ml-2 text-xl flex items-center">%</div>
             </div>
           </div>
           <div class="section">
-            <div class="text-xl text-left mb-2 ml-2 mt-5">Dawka sadzeniaków kwalifikowanych na ha:</div>
+            <div class="flex flex-wrap h-fit items-center justify-between mt-5 ml-2">
+              <div class="text-xl text-left">Dodaj sadz. własne</div>
+              <input type="checkbox" class="check section-13" id="check-section-13-part-2" />
+            </div>
+            <div class="text-xl text-left mb-2 ml-2 mt-4">Dawka sadzeniaków własnych na ha:</div>
             <div class="flex">
-              <input type="text" class="section-13" id="section-13-input-4" placeholder="2.3" value="2.3" />
+              <input type="text" class="section-13" id="section-13-input-5" placeholder="dawka sadzeniaków własnych" />
               <div class="ml-2 text-xl flex items-center">t/ha</div>
             </div>
-            <div class="text-xl text-left mb-2 ml-2 mt-5">Dawka sadzeniaków własnych na ha:</div>
+            <div class="text-xl text-left mb-2 ml-2 mt-6">Cena sadzeniaków własnych:</div>
             <div class="flex">
-              <input type="text" class="section-13" id="section-13-input-5" placeholder="2.6" value="2.6" />
-              <div class="ml-2 text-xl flex items-center">t/ha</div>
+              <input type="text" class="section-13" id="section-13-input-2" placeholder="koszt sadzeniaków własnych" />
+              <div class="ml-2 text-xl flex items-center">zł/t</div>
             </div>
 
-            <div class="flex justify-center text-2xl mt-14 w-full items-center h-fit">
+            <div class="flex justify-center text-2xl mt-12 w-full items-center h-fit">
               <div class="p-1">Koszt:</div>
-              <div class="p-1 ml-2 text-top-agrar-green" id="section-13-result-1">2134,70 zł/ha/rok</div>
+              <div class="p-1 ml-2 text-top-agrar-green" id="section-13-result-1">podaj wartości</div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="space"></div>
-      <div class="flex w-full justify-center p-3">
-        <div class="section-name">ODKAMIENIANIE</div>
+      <div class="flex w-10/12 justify-between p-3">
+        <div class="section-name">ZBIERANIE KAMIENI</div>
         <button class="display-state-button">Rozwiń</button>
       </div>
       <div class="show-hide-content">
@@ -536,24 +559,28 @@
           <div class="section">
             <div class="text-xl text-left mb-2 ml-2 mt-5">Koszt odkamieniarki:</div>
             <div class="flex">
-              <input type="text" class="section-14" id="section-14-input-1" placeholder="750" value="750" />
+              <input type="text" class="section-14" id="section-14-input-1" placeholder="koszt odkam. np. 750" />
               <div class="ml-2 text-xl flex items-center">zł/godz.</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Liczba ha na godzinę:</div>
             <div class="flex">
-              <input type="text" class="section-14" id="section-14-input-2" placeholder="0.8" value="0.8" />
+              <input type="text" class="section-14" id="section-14-input-2" placeholder="wydajność, np. 0.8" />
               <div class="ml-2 text-xl flex items-center">ha/godz.</div>
+            </div>
+            <div class="flex flex-wrap h-fit items-center justify-between mt-5 ml-2">
+              <div class="text-xl text-left">Dodaj do kalkulacji:</div>
+              <input type="checkbox" class="check" id="check-section-14" />
             </div>
             <div class="flex justify-center text-2xl mt-5 w-full items-center h-fit">
               <div class="p-1">Koszt:</div>
-              <div class="p-1 ml-2 text-top-agrar-green" id="section-14-result-1">937,50 zł/ha/rok</div>
+              <div class="p-1 ml-2 text-top-agrar-green text-nowrap" id="section-14-result-1">podaj wartości</div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="space"></div>
-      <div class="flex w-full justify-center p-3">
+      <div class="flex w-10/12 justify-between p-3">
         <div class="section-name">ZABIEGI WIOSENNE</div>
         <button class="display-state-button">Rozwiń</button>
       </div>
@@ -562,51 +589,51 @@
           <div class="section">
             <div class="text-xl text-left mb-2 ml-2 mt-5">Płytka uprawa:</div>
             <div class="flex">
-              <input type="text" class="section-15" id="section-15-input-1" placeholder="110" value="110" />
+              <input type="text" class="section-15" id="section-15-input-1" placeholder="koszt uprawy, np. 110" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Uprawa przed sadzeniem:</div>
             <div class="flex">
-              <input type="text" class="section-15" id="section-15-input-2" placeholder="120" value="120" />
+              <input type="text" class="section-15" id="section-15-input-2" placeholder="koszt uprawy, np. 120" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Sadzenie:</div>
             <div class="flex">
-              <input type="text" class="section-15" id="section-15-input-3" placeholder="170" value="170" />
+              <input type="text" class="section-15" id="section-15-input-3" placeholder="koszt sadzenia, np. 170" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Obsypywanie:</div>
             <div class="flex">
-              <input type="text" class="section-15" id="section-15-input-4" placeholder="120" value="120" />
+              <input type="text" class="section-15" id="section-15-input-4" placeholder="koszt obsypywania, np. 120" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
           </div>
           <div class="section">
             <div class="text-xl text-left mb-2 ml-2 mt-5">Formowanie redlin:</div>
             <div class="flex">
-              <input type="text" class="section-15" id="section-15-input-5" placeholder="120" value="120" />
+              <input type="text" class="section-15" id="section-15-input-5" placeholder="koszt formowania, np. 120" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Opielanie mechaniczne:</div>
             <div class="flex">
-              <input type="text" class="section-15" id="section-15-input-6" placeholder="170" value="170" />
+              <input type="text" class="section-15" id="section-15-input-6" placeholder="koszt opielania, np. 170" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Korekta redlin:</div>
             <div class="flex">
-              <input type="text" class="section-15" id="section-15-input-7" placeholder="100" value="100" />
+              <input type="text" class="section-15" id="section-15-input-7" placeholder="koszt korekty, np. 100" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
             <div class="flex justify-center text-2xl mt-14 w-full items-center h-fit">
               <div class="p-1">Koszt:</div>
-              <div class="p-1 ml-2 text-top-agrar-green" id="section-15-result-1">910 zł/ha/rok</div>
+              <div class="p-1 ml-2 text-top-agrar-green" id="section-15-result-1">podaj wartości</div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="space"></div>
-      <div class="flex w-full justify-center p-3">
+      <div class="flex w-10/12 justify-between p-3">
         <div class="section-name">ZBIÓR</div>
         <button class="display-state-button">Rozwiń</button>
       </div>
@@ -615,44 +642,44 @@
           <div class="section">
             <div class="text-xl text-left mb-2 ml-2 mt-5">Kombajn:</div>
             <div class="flex">
-              <input type="text" class="section-16" id="section-16-input-1" placeholder="320" value="320" />
+              <input type="text" class="section-16" id="section-16-input-1" placeholder="koszt kombajnu" />
               <div class="ml-2 text-xl flex items-center">zł/godz.</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Pracownicy na kombajn:</div>
             <div class="flex">
-              <input type="text" class="section-16" id="section-16-input-2" placeholder="2" value="2" />
+              <input type="text" class="section-16" id="section-16-input-2" placeholder="liczba pracowników na kombajn" />
               <div class="ml-2 text-xl flex items-center">os./kombajn</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Stawka godzinowa:</div>
             <div class="flex">
-              <input type="text" class="section-16" id="section-16-input-3" placeholder="80" value="80" />
+              <input type="text" class="section-16" id="section-16-input-3" placeholder="stawka godzinowa dla pracownika" />
               <div class="ml-2 text-xl flex items-center">zł/godz.</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Czasochłonność zbioru:</div>
             <div class="flex">
-              <input type="text" class="section-16" id="section-16-input-4" placeholder="5" value="5" />
+              <input type="text" class="section-16" id="section-16-input-4" placeholder="liczba godzin zbioru z 1 ha" />
               <div class="ml-2 text-xl flex items-center">godz./ha</div>
             </div>
           </div>
           <div class="section">
             <div class="text-xl text-left mb-2 ml-2 mt-5">Transport wewnętrzny:</div>
             <div class="flex">
-              <input type="text" class="section-16" id="section-16-input-5" placeholder="8" value="8" />
+              <input type="text" class="section-16" id="section-16-input-5" placeholder="stawka za km wewnątrz gosp." />
               <div class="ml-2 text-xl flex items-center">zł/km</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Zapotrzebowanie wewnętrzne:</div>
             <div class="flex">
-              <input type="text" class="section-16" id="section-16-input-6" placeholder="2" value="2" />
+              <input type="text" class="section-16" id="section-16-input-6" placeholder="liczba km transportu w gosp. " />
               <div class="ml-2 text-xl flex items-center">km/ha</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Transport do zakładu (całosć):</div>
             <div class="flex">
-              <input type="text" class="section-16" id="section-16-input-7" placeholder="stawka za km" />
+              <input type="text" class="section-16" id="section-16-input-7" placeholder="stawka za km do zakładu" />
               <div class="ml-2 text-xl flex items-center">zł/km</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Odległość od zakładu:</div>
             <div class="flex">
-              <input type="text" class="section-16" id="section-16-input-8" placeholder="kilometry" value="" />
+              <input type="text" class="section-16" id="section-16-input-8" placeholder="kilometry do zakładu" value="" />
               <div class="ml-2 text-xl flex items-center">km</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Ton na zestaw:</div>
@@ -670,7 +697,7 @@
       </div>
 
       <div class="space"></div>
-      <div class="flex w-full justify-center p-3">
+      <div class="flex w-10/12 justify-between p-3">
         <div class="section-name">ZARZĄDZANIE</div>
         <button class="display-state-button">Rozwiń</button>
       </div>
@@ -679,50 +706,50 @@
           <div class="section">
             <div class="text-xl text-left mb-2 ml-2 mt-5">Ubezpieczenie:</div>
             <div class="flex">
-              <input type="text" class="section-17" id="section-17-input-1" placeholder="100" value="100" />
+              <input type="text" class="section-17" id="section-17-input-1" placeholder="stawka ubezpieczenia" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Podatek:</div>
             <div class="flex">
-              <input type="text" class="section-17" id="section-17-input-2" placeholder="100" value="100" />
+              <input type="text" class="section-17" id="section-17-input-2" placeholder="stawka podatku" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
           </div>
           <div class="section">
             <div class="text-xl text-left mb-2 ml-2 mt-5">Czynsz dzierżawny:</div>
             <div class="flex">
-              <input type="text" class="section-17" id="section-17-input-3" placeholder="0" value="0" />
+              <input type="text" class="section-17" id="section-17-input-3" placeholder="stawka dzierżawy" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
             <div class="flex justify-center text-2xl mt-14 w-full items-center h-fit">
               <div class="p-1">Koszt:</div>
-              <div class="p-1 ml-2 text-top-agrar-green" id="section-17-result-1">200 zł/ha/rok</div>
+              <div class="p-1 ml-2 text-top-agrar-green" id="section-17-result-1">podaj wartości</div>
             </div>
           </div>
         </div>
       </div>
-      <div class="font-bold flex justify-center text-2xl mb-3 mt-3 w-full 1 items-center h-fit">
+      <div class="font-bold flex flex-wrap justify-center text-2xl mb-3 mt-3 w-full 1 items-center h-fit">
         <div class="p-1">Suma kosztów:</div>
         <div class="p-1 ml-2 text-top-agrar-green text-nowrap" id="result-2">podaj wartości</div>
       </div>
-      <div class="font-bold flex justify-center text-2xl mb-3 mt-3 w-full 1 items-center h-fit">
+      <div class="font-bold flex flex-wrap justify-center text-2xl mb-3 mt-3 w-full 1 items-center h-fit">
         <div class="p-1">Koszty całościowe:</div>
         <div class="p-1 ml-2 text-top-agrar-green text-nowrap" id="result-3">podaj wartości</div>
       </div>
-      <div class="font-bold flex justify-center text-2xl mb-3 mt-3 w-full 1 items-center h-fit">
+      <div class="font-bold flex flex-wrap justify-center text-2xl mb-3 mt-3 w-full 1 items-center h-fit">
         <div class="p-1">Nadwyżka bezpośrednia:</div>
         <div class="p-1 ml-2 text-top-agrar-green text-nowrap" id="result-4">podaj wartości</div>
       </div>
-      <div class="font-bold flex justify-center text-2xl mb-3 mt-3 w-full 1 items-center h-fit">
+      <div class="font-bold flex flex-wrap justify-center text-2xl mb-3 mt-3 w-full 1 items-center h-fit">
         <div class="p-1">Plon minimum kontraktowy na pokrycie kosztów:</div>
         <div class="p-1 ml-2 text-top-agrar-green text-nowrap" id="result-5">podaj wartości</div>
       </div>
       <div class="font-bold flex flex-col justify-center text-2xl mb-3 mt-3 w-full 1 items-center h-fit">
-        <div class="flex">
+        <div class="flex flex-wrap">
           <div class="p-1">Cena minimum kontraktowych*:</div>
           <div class="p-1 ml-2 text-top-agrar-green text-nowrap" id="result-6">podaj wartości</div>
         </div>
-        <div class="text-xl text-bg-info">* przy zakładanym plonie i z dopłatami przetwórcy</div>
+        <div class="text-xl mt-2 text-bg-info">* przy zakładanym plonie i z dopłatami przetwórcy</div>
       </div>
     </div>
   </body>
