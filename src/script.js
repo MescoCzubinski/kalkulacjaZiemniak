@@ -300,16 +300,25 @@ document.querySelectorAll(".section-10").forEach((input) => {
 let sec11in1 = document.querySelector("#section-11-input-1");
 let sec11in2 = document.querySelector("#section-11-input-2");
 let sec11in3 = document.querySelector("#section-11-input-3");
+let sec11ch1 = document.querySelector("#check-section-11-1");
+let sec11ch2 = document.querySelector("#check-section-11-2");
+let sec11ch3 = document.querySelector("#check-section-11-3");
 let sec11res1 = document.querySelector("#section-11-result-1");
 document.querySelectorAll(".section-11").forEach((input) => {
   input.addEventListener("input", function () {
-    let result = Number(sec11in1.value) + Number(sec11in2.value) + Number(sec11in3.value);
+    let result = 0;
+    if (sec11ch1.checked) result += Number(sec11in1.value);
+    if (sec11ch2.checked) result += Number(sec11in2.value);
+    if (sec11ch3.checked) result += Number(sec11in3.value);
 
     if (result > 100000000) {
       result = "za dużo";
     }
-    if (result !== 0 && result !== Infinity) {
+    if (result !== Infinity) {
       sec11res1.innerHTML = result.toLocaleString("pl-PL", { minimumFractionDigits: 0, maximumFractionDigits: 2 }) + " zł/ha/rok";
+    }
+    if (result === 0) {
+      sec11res1.innerHTML = "podaj wartości";
     }
     recalculateSectionHeight();
   });
@@ -403,16 +412,34 @@ let sec15in4 = document.querySelector("#section-15-input-4");
 let sec15in5 = document.querySelector("#section-15-input-5");
 let sec15in6 = document.querySelector("#section-15-input-6");
 let sec15in7 = document.querySelector("#section-15-input-7");
+let sec15ch1 = document.querySelector("#check-section-15-1");
+let sec15ch2 = document.querySelector("#check-section-15-2");
+let sec15ch3 = document.querySelector("#check-section-15-3");
+let sec15ch4 = document.querySelector("#check-section-15-4");
+let sec15ch5 = document.querySelector("#check-section-15-5");
+let sec15ch6 = document.querySelector("#check-section-15-6");
+let sec15ch7 = document.querySelector("#check-section-15-7");
+
 let sec15res1 = document.querySelector("#section-15-result-1");
 document.querySelectorAll(".section-15").forEach((input) => {
   input.addEventListener("input", function () {
-    let result = Number(sec15in1.value) + Number(sec15in2.value) + Number(sec15in3.value) + Number(sec15in4.value) + Number(sec15in5.value) + Number(sec15in6.value) + Number(sec15in7.value);
+    let result = 0;
+    if (sec15ch1.checked) result += Number(sec15in1.value);
+    if (sec15ch2.checked) result += Number(sec15in2.value);
+    if (sec15ch3.checked) result += Number(sec15in3.value);
+    if (sec15ch4.checked) result += Number(sec15in4.value);
+    if (sec15ch5.checked) result += Number(sec15in5.value);
+    if (sec15ch6.checked) result += Number(sec15in6.value);
+    if (sec15ch7.checked) result += Number(sec15in7.value);
 
     if (result > 100000000) {
       result = "za dużo";
     }
-    if (result !== 0 && result !== Infinity) {
+    if (result !== Infinity) {
       sec15res1.innerHTML = result.toLocaleString("pl-PL", { minimumFractionDigits: 0, maximumFractionDigits: 2 }) + " zł/ha/rok";
+    }
+    if (result === 0) {
+      sec15res1.innerHTML = "uzupełnij wartości";
     }
     recalculateSectionHeight();
   });
@@ -461,16 +488,25 @@ document.querySelectorAll(".section-16").forEach((input) => {
 let sec17in1 = document.querySelector("#section-17-input-1");
 let sec17in2 = document.querySelector("#section-17-input-2");
 let sec17in3 = document.querySelector("#section-17-input-3");
+let sec17ch1 = document.querySelector("#check-section-17-1");
+let sec17ch2 = document.querySelector("#check-section-17-2");
+let sec17ch3 = document.querySelector("#check-section-17-3");
 let sec17res1 = document.querySelector("#section-17-result-1");
 document.querySelectorAll(".section-17").forEach((input) => {
   input.addEventListener("input", function () {
-    let result = Number(sec17in1.value) + Number(sec17in2.value) + Number(sec17in3.value);
+    let result = 0;
+    if (sec17ch1.checked) result += Number(sec17in1.value);
+    if (sec17ch2.checked) result += Number(sec17in2.value);
+    if (sec17ch3.checked) result += Number(sec17in3.value);
 
     if (result > 100000000) {
       result = "za dużo";
     }
-    if (result !== 0 && result !== Infinity) {
+    if (result !== Infinity) {
       sec17res1.innerHTML = result.toLocaleString("pl-PL", { minimumFractionDigits: 0, maximumFractionDigits: 2 }) + " zł/ha/rok";
+    }
+    if (result === 0) {
+      sec17res1.innerHTML = "podaj wartości";
     }
     recalculateSectionHeight();
   });
@@ -486,7 +522,6 @@ let check7 = document.querySelector("#check-section-7");
 let check8 = document.querySelector("#check-section-8");
 let check9 = document.querySelector("#check-section-9");
 let check12 = document.querySelector("#check-section-12");
-let check13 = document.querySelector("#check-section-13");
 let check14 = document.querySelector("#check-section-14");
 document.querySelectorAll("input").forEach((input) => {
   input.addEventListener("input", function () {
@@ -502,7 +537,6 @@ document.querySelectorAll("input").forEach((input) => {
     let s12 = parseFloat(sec12res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
     if (!check12.checked) s12 = 0;
     let s13 = parseFloat(sec13res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
-    if (!check13.checked) s13 = 0;
     let s14 = parseFloat(sec14res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
     if (!check14.checked) s14 = 0;
     let s15 = parseFloat(sec15res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;

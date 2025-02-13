@@ -1,7 +1,5 @@
 40 min 14:00->
 
 TOKNOW: zmiana jednej wartości w nawozach naturlanych - zapsane, żeby nie uciekło
-TODO: checkboxy:
--zabiegi jesienne, zabiegi wiosenne, zarządzanie - plus przy każdej ramce
 
 TODO: dynamicznie dostawiane kolejne punkty

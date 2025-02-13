@@ -612,6 +612,10 @@ video {
   margin-left: 0.5rem;
 }
 
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
 .mt-12 {
   margin-top: 3rem;
 }
@@ -728,6 +732,15 @@ video {
 
 .border-2 {
   border-width: 2px;
+}
+
+.border-t-2 {
+  border-top-width: 2px;
+}
+
+.border-bg-info {
+  --tw-border-opacity: 1;
+  border-color: rgb(163 163 163 / var(--tw-border-opacity, 1));
 }
 
 .border-top-agrar-green {
@@ -872,7 +885,7 @@ select.visited {
   background-color: rgb(163 163 163 / 0.3);
 }
 
-input[type="text"] {
+input[type="text"]:not(.name) {
   height: 3rem;
   width: 6rem;
   flex: 1 1 0%;
@@ -887,7 +900,44 @@ input[type="text"] {
   line-height: 1.75rem;
 }
 
+input[type="text"]:not(.name):hover {
+  background-color: rgb(163 163 163 / 0.25);
+}
+
+input[type="text"] {
+  margin-top: 0.5rem;
+  height: 3rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  flex: 1 1 0%;
+  border-radius: 1.5rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(163 163 163 / var(--tw-border-opacity, 1));
+  padding-left: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 input[type="text"]:hover {
+  background-color: rgb(163 163 163 / 0.25);
+}
+
+input[type="button"] {
+  height: 3rem;
+  width: 3rem;
+  flex: 1 1 0%;
+  border-radius: 1.5rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(163 163 163 / var(--tw-border-opacity, 1));
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(163 163 163 / var(--tw-text-opacity, 1));
+}
+
+input[type="button"]:hover {
   background-color: rgb(163 163 163 / 0.25);
 }
 
@@ -948,6 +998,12 @@ input[type="checkbox"]:checked {
   .space {
     width: 97.5%;
   }
+}
+
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .hover\:bg-top-agrar-green\/25:hover {

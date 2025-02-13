@@ -430,11 +430,13 @@
           <div class="section">
             <div class="text-xl text-left mb-2 ml-2 mt-5">Uprawa po przedplonie:</div>
             <div class="flex">
+              <input type="checkbox" class="check section-11" id="check-section-11-1" />
               <input type="text" class="section-11" id="section-11-input-1" placeholder="koszt uprawy, np. 120" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Mulczowanie międzyplonu:</div>
             <div class="flex">
+              <input type="checkbox" class="check section-11" id="check-section-11-2" />
               <input type="text" class="section-11" id="section-11-input-2" placeholder="koszt mulczowania np. 140" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
@@ -442,6 +444,8 @@
           <div class="section">
             <div class="text-xl text-left mb-2 ml-2 mt-5">Uprawa głęboka:</div>
             <div class="flex">
+              <input type="checkbox" class="check section-11" id="check-section-11-3" />
+
               <input type="text" class="section-11" id="section-11-input-3" placeholder="koszt uprawy np. 220" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
@@ -569,7 +573,7 @@
             </div>
             <div class="flex flex-wrap h-fit items-center justify-between mt-5 ml-2">
               <div class="text-xl text-left">Dodaj do kalkulacji:</div>
-              <input type="checkbox" class="check" id="check-section-14" />
+              <input type="checkbox" class="check section-14" id="check-section-14" />
             </div>
             <div class="flex justify-center text-2xl mt-5 w-full items-center h-fit">
               <div class="p-1">Koszt:</div>
@@ -589,21 +593,25 @@
           <div class="section">
             <div class="text-xl text-left mb-2 ml-2 mt-5">Płytka uprawa:</div>
             <div class="flex">
+              <input type="checkbox" class="check section-15" id="check-section-15-1" />
               <input type="text" class="section-15" id="section-15-input-1" placeholder="koszt uprawy, np. 110" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Uprawa przed sadzeniem:</div>
             <div class="flex">
+              <input type="checkbox" class="check section-15" id="check-section-15-2" />
               <input type="text" class="section-15" id="section-15-input-2" placeholder="koszt uprawy, np. 120" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Sadzenie:</div>
             <div class="flex">
+              <input type="checkbox" class="check section-15" id="check-section-15-3" />
               <input type="text" class="section-15" id="section-15-input-3" placeholder="koszt sadzenia, np. 170" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Obsypywanie:</div>
             <div class="flex">
+              <input type="checkbox" class="check section-15" id="check-section-15-4" />
               <input type="text" class="section-15" id="section-15-input-4" placeholder="koszt obsypywania, np. 120" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
@@ -611,16 +619,19 @@
           <div class="section">
             <div class="text-xl text-left mb-2 ml-2 mt-5">Formowanie redlin:</div>
             <div class="flex">
+              <input type="checkbox" class="check section-15" id="check-section-15-5" />
               <input type="text" class="section-15" id="section-15-input-5" placeholder="koszt formowania, np. 120" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Opielanie mechaniczne:</div>
             <div class="flex">
+              <input type="checkbox" class="check section-15" id="check-section-15-6" />
               <input type="text" class="section-15" id="section-15-input-6" placeholder="koszt opielania, np. 170" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Korekta redlin:</div>
             <div class="flex">
+              <input type="checkbox" class="check section-15" id="check-section-15-7" />
               <input type="text" class="section-15" id="section-15-input-7" placeholder="koszt korekty, np. 100" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
@@ -630,6 +641,15 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="space"></div>
+      <div class="flex w-10/12 justify-between p-3">
+        <div class="section-name">NAWOŻENIE MINERALNE</div>
+        <button class="display-state-button">Rozwiń</button>
+      </div>
+      <div class="show-hide-content">
+        <div class="" id="nawozenie-mineralne"></div>
       </div>
 
       <div class="space"></div>
@@ -706,19 +726,23 @@
           <div class="section">
             <div class="text-xl text-left mb-2 ml-2 mt-5">Ubezpieczenie:</div>
             <div class="flex">
-              <input type="text" class="section-17" id="section-17-input-1" placeholder="stawka ubezpieczenia" />
+              <input type="checkbox" class="check section-17" id="check-section-17-1" />
+              <input type="text" class="section-17" id="section-17-input-1" placeholder="stawka" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-5">Podatek:</div>
             <div class="flex">
-              <input type="text" class="section-17" id="section-17-input-2" placeholder="stawka podatku" />
+              <input type="checkbox" class="check section-17" id="check-section-17-2" />
+
+              <input type="text" class="section-17" id="section-17-input-2" placeholder="stawka" />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
           </div>
           <div class="section">
             <div class="text-xl text-left mb-2 ml-2 mt-5">Czynsz dzierżawny:</div>
             <div class="flex">
-              <input type="text" class="section-17" id="section-17-input-3" placeholder="stawka dzierżawy" />
+              <input type="checkbox" class="check section-17" id="check-section-17-3" />
+              <input type="text" class="section-17" id="section-17-input-3" placeholder="stawka " />
               <div class="ml-2 text-xl flex items-center">zł/ha</div>
             </div>
             <div class="flex justify-center text-2xl mt-14 w-full items-center h-fit">
@@ -754,4 +778,5 @@
     </div>
   </body>
   <script src="script.js"></script>
+  <script src="temp.js"></script>
 </html>
