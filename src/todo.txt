@@ -1,5 +1,0 @@
-40 min 14:00->
-
-TOKNOW: zmiana jednej wartości w nawozach naturlanych - zapsane, żeby nie uciekło
-
-TODO: dynamicznie dostawiane kolejne punkty

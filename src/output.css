@@ -690,6 +690,10 @@ video {
   width: 100%;
 }
 
+.w-80 {
+  width: 20rem;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -812,6 +816,10 @@ video {
 
 .blur {
   --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 

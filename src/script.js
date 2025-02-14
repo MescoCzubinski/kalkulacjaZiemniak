@@ -548,7 +548,7 @@ document.querySelectorAll("input").forEach((input) => {
     if (result !== 0) {
       res2.innerHTML = result.toLocaleString("pl-PL", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " zł/ha/rok";
       res3.innerHTML = (result * Number(sec2in1.value)).toLocaleString("pl-PL", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " zł";
-      res4.innerHTML = r1 - result + " zł";
+      res4.innerHTML = r1 - result * Number(sec2in1.value) + " zł";
       if (sec2in2.value !== 0) res5.innerHTML = (result / Number(sec2in2.value)).toLocaleString("pl-PL", { minimumFractionDigits: 0, maximumFractionDigits: 0 }) + " dt/ha";
       if (sec1in3.value !== 0) res6.innerHTML = (result / Number(sec1in3.value)).toLocaleString("pl-PL", { minimumFractionDigits: 0, maximumFractionDigits: 0 }) + " zł/t";
     }
