@@ -681,6 +681,10 @@ video {
   width: 6rem;
 }
 
+.w-80 {
+  width: 20rem;
+}
+
 .w-fit {
   width: -moz-fit-content;
   width: fit-content;
@@ -688,10 +692,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-80 {
-  width: 20rem;
 }
 
 .flex-1 {
@@ -951,6 +951,7 @@ input[type="button"]:hover {
 
 input[type="checkbox"] {
   margin-right: 1rem;
+  margin-top: 0.5rem;
   aspect-ratio: 1 / 1;
   height: 3rem;
   width: 3rem;

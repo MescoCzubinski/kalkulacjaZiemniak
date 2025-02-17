@@ -1,6 +1,6 @@
 function format(inputString) {
   return inputString
-    .replace(/[^0-9.,]/g, "") // Allow only numbers, dots, and commas
+    .replace(/[^0-9.,]/g, "")
     .replace(/^(?!\.)/g, "")
     .replace(/,/g, ".")
     .replace(/^\.($|[^0-9])/, "0.")
@@ -8,12 +8,19 @@ function format(inputString) {
     .replace(/(.*?\..*?)\./g, "$1")
     .replace(/(\d+\.\d{2})\d*/g, "$1");
 }
-document.querySelectorAll("input").forEach((input) => {
-  input.addEventListener("input", (event) => {
+document.addEventListener("input", (event) => {
+  if (event.target.tagName === "INPUT" && ["text", "number", "email", "password", "tel", "search"].includes(event.target.type)) {
     const inputField = event.target;
+    const cursorPosition = inputField.selectionStart;
+    const oldLength = inputField.value.length;
+
     inputField.value = format(inputField.value);
-  });
+
+    const newLength = inputField.value.length;
+    inputField.selectionStart = inputField.selectionEnd = cursorPosition + (newLength - oldLength);
+  }
 });
+
 const visitedElements = document.querySelectorAll("input, select");
 visitedElements.forEach((input) => {
   input.addEventListener("blur", function () {
@@ -70,7 +77,6 @@ document.querySelectorAll(".section-2").forEach((input) => {
     let result1 = Number(sec2in1.value) * Number(sec1in3.value) * Number(sec2in2.value);
     let result2 = Number(sec2in1.value) * (Number(sec1in2.value) - Number(sec1in3.value)) * Number(sec2in3.value);
 
-    console.log("dwerwef");
     if (result1 > 100000000) {
       result1 = "za dużo";
     }
@@ -463,16 +469,11 @@ document.querySelectorAll(".section-16").forEach((input) => {
     let transportWew = Number(sec16in5.value) * Number(sec16in6.value);
 
     let in7 = parseFloat(sec16in7.value) || 0;
-    console.log(in7);
     let in8 = parseFloat(sec16in8.value) || 0;
-    console.log(in8);
     let in9 = parseFloat(sec16in9.value) || 1;
-    console.log(in9);
     let in2 = parseFloat(sec1in2.value) || 0;
-    console.log(in2);
 
     let transportZew = (((in7 * in8) / in9) * in2) / 10;
-    console.log(transportZew);
     let result = kombajn + pracownicy + transportWew + transportZew;
     if (result > 100000000) {
       result = "za dużo";
@@ -523,8 +524,9 @@ let check8 = document.querySelector("#check-section-8");
 let check9 = document.querySelector("#check-section-9");
 let check12 = document.querySelector("#check-section-12");
 let check14 = document.querySelector("#check-section-14");
-document.querySelectorAll("input").forEach((input) => {
-  input.addEventListener("input", function () {
+
+document.addEventListener("input", function (event) {
+  if (event.target.matches("input")) {
     let r1 = parseFloat(res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
     let s7 = parseFloat(sec7res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
     if (!check7.checked) s7 = 0;
@@ -543,14 +545,182 @@ document.querySelectorAll("input").forEach((input) => {
     let s16 = parseFloat(sec16res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
     let s17 = parseFloat(sec17res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
 
-    let result = s7 + s8 + s9 + s10 + s11 + s12 + s13 + s14 + s15 + s16 + s17;
+    let nawoz1 = document.querySelector("#NawozenieMineralne");
+    let nawoz2 = document.querySelector("#NawozenieDolistne");
+
+    console.log(nawoz1.innerHTML.replaceAll("&nbsp;", "").replace(" zł", ""));
+    let s20 = nawoz1 ? parseFloat(sec20res1.innerHTML.replaceAll("&nbsp;", "").replace(" zł", "")) || 0 : 0;
+    let sNawoz1 = nawoz1 ? parseFloat(nawoz1.innerHTML.replaceAll("&nbsp;", "").replace(" zł", "")) || 0 : 0;
+    let sNawoz2 = nawoz2 ? parseFloat(nawoz2.innerHTML.replaceAll("&nbsp;", "").replace(" zł", "")) || 0 : 0;
+
+    let result = s7 + s8 + s9 + s10 + s11 + s12 + s13 + s14 + s15 + s16 + s17 + sNawoz1 + s20 + sNawoz2;
 
     if (result !== 0) {
       res2.innerHTML = result.toLocaleString("pl-PL", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " zł/ha/rok";
       res3.innerHTML = (result * Number(sec2in1.value)).toLocaleString("pl-PL", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " zł";
-      res4.innerHTML = r1 - result * Number(sec2in1.value) + " zł";
+      res4.innerHTML = r1 - result + " zł";
       if (sec2in2.value !== 0) res5.innerHTML = (result / Number(sec2in2.value)).toLocaleString("pl-PL", { minimumFractionDigits: 0, maximumFractionDigits: 0 }) + " dt/ha";
       if (sec1in3.value !== 0) res6.innerHTML = (result / Number(sec1in3.value)).toLocaleString("pl-PL", { minimumFractionDigits: 0, maximumFractionDigits: 0 }) + " zł/t";
     }
+  }
+});
+
+class miniKalkulator {
+  constructor(path, name, unit1, unit2) {
+    this.path = path;
+    this.unit1 = unit1;
+    this.unit2 = unit2;
+    this.name = name;
+    this.sections = [];
+
+    this.result = document.createElement("div");
+    this.result.classList.add("main-container");
+
+    this.renderBase();
+  }
+
+  renderBase() {
+    this.result.innerHTML = `
+          <div class="section-container">
+            <div class="section">
+              <div class="border-t-2 mb-2 border-bg-info"></div>
+              <div class="flex">
+                  <input type="text" class="name" placeholder="nazwa" />
+              </div>
+              <div class="flex flex-col">
+                  <div class="text-xl text-left mb-2 ml-2 mt-4">Koszt jednostkowy:</div>
+                  <div class="flex">
+                      <input type="text" class="cost-per-unit" placeholder="koszt za t" class="${this.name}"/>
+                      <div class="ml-2 text-xl flex items-center">${this.unit1}</div>
+                  </div>
+                  <div class="text-xl text-left mb-2 ml-2 mt-4">Dawka na ha:</div>
+                  <div class="flex">
+                      <input type="text" class="dose-per-ha" placeholder="ile na 1 ha" class="${this.name}"/>
+                      <div class="ml-2 text-xl flex items-center">${this.unit2}</div>
+                  </div>
+              </div>
+              <div class="flex text-xl mt-4 w-full items-center h-fit">
+                <div class="p-1">Koszt:</div>
+                <div class="p-1 ml-2 text-top-agrar-green total-cost">0</div>
+              </div>
+            </div>
+            <div class="flex w-80 justify-center">
+              <input type="button" class="mr-2 add-btn" value="Kliknij i dodaj kolejny" />
+            </div>
+          </div>
+          <div class="flex text-2xl mt-4 w-full justify-center items-center h-fit">
+            <div class="p-1 font-bold">SUMA:</div>
+            <div class="p-1 ml-2 text-top-agrar-green total-sum" id="${this.name}">podaj wartości</div>
+          </div>`;
+
+    this.path.appendChild(this.result);
+
+    this.sectionContainer = this.result.querySelector(".section-container");
+    this.sections.push(this.result.querySelector(".section"));
+
+    this.result.querySelector(".add-btn").addEventListener("click", () => this.addCalc());
+    this.addEventListeners(this.result.querySelector(".section"));
+  }
+
+  addCalc() {
+    const newSection = document.createElement("div");
+    newSection.classList.add("section");
+    newSection.innerHTML = `
+          <div class="border-t-2 mb-2 border-bg-info"></div>
+          <div class="flex">
+              <input type="text" class="name" placeholder="nazwa" />
+              <input type="button" class="ml-2 mt-2 remove-btn" value="-" />
+          </div>
+          <div class="flex flex-col">
+              <div class="text-xl text-left mb-2 ml-2 mt-4">Koszt jednostkowy:</div>
+              <div class="flex">
+                  <input type="text" class="cost-per-unit" placeholder="koszt za t" class="${this.name}"/>
+                  <div class="ml-2 text-xl flex items-center">${this.unit1}</div>
+              </div>
+              <div class="text-xl text-left mb-2 ml-2 mt-4">Dawka na ha:</div>
+              <div class="flex">
+                  <input type="text" class="dose-per-ha" placeholder="ile na 1 ha" class="${this.name}"/>
+                  <div class="ml-2 text-xl flex items-center">${this.unit2}</div>
+              </div>
+              <div class="flex text-xl mt-4 w-full items-center h-fit">
+                <div class="p-1">Koszt:</div>
+                <div class="p-1 ml-2 text-top-agrar-green total-cost">podaj wartości</div>
+              </div>
+          </div>`;
+
+    newSection.querySelector(".remove-btn").addEventListener("click", () => {
+      newSection.remove();
+      this.sections = this.sections.filter((s) => s !== newSection);
+      this.updateTotalSum();
+    });
+
+    this.sectionContainer.appendChild(newSection);
+    this.sections.push(newSection);
+    this.addEventListeners(newSection);
+
+    recalculateSectionHeight();
+  }
+
+  addEventListeners(section) {
+    const costInput = section.querySelector(".cost-per-unit");
+    const doseInput = section.querySelector(".dose-per-ha");
+    const totalCost = section.querySelector(".total-cost");
+
+    const updateCost = () => {
+      const cost = parseFloat(costInput.value) || 0;
+      const dose = parseFloat(doseInput.value) || 0;
+
+      if (cost * dose === 0) {
+        totalCost.textContent = "podaj wartości";
+      }
+      if (cost * dose < 100000000) {
+        totalCost.textContent = (cost * dose).toLocaleString("pl-PL", { minimumFractionDigits: 0, maximumFractionDigits: 2 }) + " zł";
+      } else {
+        totalCost.textContent = "za dużo";
+      }
+
+      this.updateTotalSum();
+    };
+
+    costInput.addEventListener("input", updateCost);
+    doseInput.addEventListener("input", updateCost);
+  }
+
+  updateTotalSum() {
+    const totalSumElement = this.result.querySelector(".total-sum");
+
+    let sum = this.sections.reduce((acc, section) => {
+      const costText = section.querySelector(".total-cost").innerHTML.replaceAll("&nbsp;", "").replace(" zł", "");
+      const cost = parseFloat(costText) || 0;
+      return acc + cost;
+    }, 0);
+
+    totalSumElement.textContent = sum === 0 ? "podaj wartości" : sum.toLocaleString("pl-PL", { minimumFractionDigits: 0, maximumFractionDigits: 2 }) + " zł";
+  }
+}
+
+window.NawozenieMineralne = new miniKalkulator(document.querySelector("#nawozenie-mineralne"), "NawozenieMineralne", "zł/t", "kg/ha");
+window.NawozenieDolistne = new miniKalkulator(document.querySelector("#nawozy-dolistne"), "NawozenieDolistne", "zł/l", "l/ha");
+
+let sec20in1 = document.querySelector("#section-20-input-1");
+let sec20in2 = document.querySelector("#section-20-input-2");
+let sec20res1 = document.querySelector("#section-20-result-1");
+document.querySelectorAll(".section-20").forEach((input) => {
+  input.addEventListener("input", function () {
+    let val1 = Number(sec20in1.value) || 0;
+    let val2 = Number(sec20in2.value) || 0;
+    let result = val1 * val2;
+
+    if (result > 100000000) {
+      result = "za dużo";
+    } else if (result === 0) {
+      sec20res1.innerHTML = "podaj wartości";
+      return;
+    } else {
+      result = result.toLocaleString("pl-PL", { minimumFractionDigits: 0, maximumFractionDigits: 2 }) + " zł/ha";
+    }
+
+    sec20res1.innerHTML = result;
+    recalculateSectionHeight();
   });
 });

@@ -44,7 +44,7 @@ input[type="button"] {
   @apply w-12 h-12 text-xl text-bg-info border-2 border-bg-info rounded-3xl flex-1 hover:bg-bg-info/25;
 }
 input[type="checkbox"] {
-  @apply h-12 w-12 aspect-square mr-4 text-xl border-2 border-bg-info rounded-2xl bg-transparent hover:bg-bg-info/25;
+  @apply h-12 w-12 aspect-square mr-4 text-xl border-2 border-bg-info rounded-2xl bg-transparent hover:bg-bg-info/25 mt-2;
   appearance: none;
   position: relative;
 }
