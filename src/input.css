@@ -72,3 +72,6 @@ input[type="checkbox"]:checked {
 .main-container {
   @apply flex justify-around flex-wrap;
 }
+.section-container {
+  @apply flex justify-around flex-wrap;
+}

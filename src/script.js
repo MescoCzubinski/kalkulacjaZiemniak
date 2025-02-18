@@ -136,9 +136,9 @@ document.querySelectorAll(".section-4").forEach((input) => {
 let sec5res1 = document.querySelector("#section-5-result-1");
 document.querySelectorAll(".section-1, .section-2, .section-3, .section-4").forEach((input) => {
   input.addEventListener("input", function () {
-    let sec2res3Value = parseFloat(sec2res3.innerHTML.replace(",", ".").replace(" zł", "").replace("&nbsp;", "")) || 0;
-    let sec3res1Value = parseFloat(sec3res1.innerHTML.replace(",", ".").replace(" zł", "").replace("&nbsp;", "")) || 0;
-    let sec4res1Value = parseFloat(sec4res1.innerHTML.replace(",", ".").replace(" zł", "").replace("&nbsp;", "")) || 0;
+    let sec2res3Value = parseFloat(sec2res3.innerHTML.replaceAll("&nbsp;", "").replace(" zł", "").replace(",", ".")) || 0;
+    let sec3res1Value = parseFloat(sec3res1.innerHTML.replaceAll("&nbsp;", "").replace(" zł", "").replace(",", ".")) || 0;
+    let sec4res1Value = parseFloat(sec4res1.innerHTML.replaceAll("&nbsp;", "").replace(" zł", "").replace(",", ".")) || 0;
 
     let result = sec2res3Value + sec3res1Value + sec4res1Value;
 
@@ -207,8 +207,8 @@ document.querySelectorAll(".section-6").forEach((input) => {
 //suma przychodów
 document.querySelectorAll(".section-1, .section-2, .section-3, .section-4, .section-5, .section-6").forEach((input) => {
   input.addEventListener("input", function () {
-    let przychody = parseFloat(sec5res1.innerHTML.replace(",", ".").replace(" zł", "").replace("&nbsp;", "")) || 0;
-    let doplaty = parseFloat(sec6res1.innerHTML.replace(",", ".").replace(" zł", "").replace("&nbsp;", "")) || 0;
+    let przychody = parseFloat(sec5res1.innerHTML.replaceAll("&nbsp;", "").replace(" zł", "").replace(",", ".")) || 0;
+    let doplaty = parseFloat(sec6res1.innerHTML.replaceAll("&nbsp;", "").replace(" zł", "").replace(",", ".")) || 0;
 
     let result = przychody + doplaty;
 
@@ -527,33 +527,38 @@ let check14 = document.querySelector("#check-section-14");
 
 document.addEventListener("input", function (event) {
   if (event.target.matches("input")) {
-    let r1 = parseFloat(res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
-    let s7 = parseFloat(sec7res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
+    let r1 = parseFloat(res1.innerHTML.replaceAll("&nbsp;", "").replace(" zł/ha/rok", "").replace(",", ".")) || 0;
+    let s7 = parseFloat(sec7res1.innerHTML.replaceAll("&nbsp;", "").replace(" zł/ha/rok", "").replace(",", ".")) || 0;
     if (!check7.checked) s7 = 0;
-    let s8 = parseFloat(sec8res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
+    let s8 = parseFloat(sec8res1.innerHTML.replaceAll("&nbsp;", "").replace(" zł/ha/rok", "").replace(",", ".")) || 0;
     if (!check8.checked) s8 = 0;
-    let s9 = parseFloat(sec9res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
+    let s9 = parseFloat(sec9res1.innerHTML.replaceAll("&nbsp;", "").replace(" zł/ha/rok", "").replace(",", ".")) || 0;
     if (!check9.checked) s9 = 0;
-    let s10 = parseFloat(sec10res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
-    let s11 = parseFloat(sec11res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
-    let s12 = parseFloat(sec12res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
+    let s10 = parseFloat(sec10res1.innerHTML.replaceAll("&nbsp;", "").replace(" zł/ha/rok", "").replace(",", ".")) || 0;
+    let s11 = parseFloat(sec11res1.innerHTML.replaceAll("&nbsp;", "").replace(" zł/ha/rok", "").replace(",", ".")) || 0;
+    let s12 = parseFloat(sec12res1.innerHTML.replaceAll("&nbsp;", "").replace(" zł/ha/rok", "").replace(",", ".")) || 0;
     if (!check12.checked) s12 = 0;
-    let s13 = parseFloat(sec13res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
-    let s14 = parseFloat(sec14res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
+    let s13 = parseFloat(sec13res1.innerHTML.replaceAll("&nbsp;", "").replace(" zł/ha/rok", "").replace(",", ".")) || 0;
+    let s14 = parseFloat(sec14res1.innerHTML.replaceAll("&nbsp;", "").replace(" zł/ha/rok", "").replace(",", ".")) || 0;
     if (!check14.checked) s14 = 0;
-    let s15 = parseFloat(sec15res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
-    let s16 = parseFloat(sec16res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
-    let s17 = parseFloat(sec17res1.innerHTML.replace(" zł/ha/rok", "").replace("&nbsp;", "")) || 0;
+    let s15 = parseFloat(sec15res1.innerHTML.replaceAll("&nbsp;", "").replace(" zł/ha/rok", "").replace(",", ".")) || 0;
+    let s16 = parseFloat(sec16res1.innerHTML.replaceAll("&nbsp;", "").replace(" zł/ha/rok", "").replace(",", ".")) || 0;
+    let s17 = parseFloat(sec17res1.innerHTML.replaceAll("&nbsp;", "").replace(" zł/ha/rok", "").replace(",", ".")) || 0;
+    let s20 = parseFloat(sec20res1.innerHTML.replaceAll("&nbsp;", "").replace(" zł", "").replace(",", ".")) || 0;
+    let s21 = parseFloat(sec21res1.innerHTML.replaceAll("&nbsp;", "").replace(" zł", "").replace(",", ".")) || 0;
+    let s22 = parseFloat(sec22res1.innerHTML.replaceAll("&nbsp;", "").replace(" zł", "").replace(",", ".")) || 0;
 
     let nawoz1 = document.querySelector("#NawozenieMineralne");
     let nawoz2 = document.querySelector("#NawozenieDolistne");
+    let nawoz3 = document.querySelector("#SOR");
+    let nawoz4 = document.querySelector("#biopreparat");
 
-    console.log(nawoz1.innerHTML.replaceAll("&nbsp;", "").replace(" zł", ""));
-    let s20 = nawoz1 ? parseFloat(sec20res1.innerHTML.replaceAll("&nbsp;", "").replace(" zł", "")) || 0 : 0;
-    let sNawoz1 = nawoz1 ? parseFloat(nawoz1.innerHTML.replaceAll("&nbsp;", "").replace(" zł", "")) || 0 : 0;
-    let sNawoz2 = nawoz2 ? parseFloat(nawoz2.innerHTML.replaceAll("&nbsp;", "").replace(" zł", "")) || 0 : 0;
+    let sNawoz1 = nawoz1 ? parseFloat(nawoz1.innerHTML.replaceAll("&nbsp;", "").replace(" zł", "").replace(",", ".")) || 0 : 0;
+    let sNawoz2 = nawoz2 ? parseFloat(nawoz2.innerHTML.replaceAll("&nbsp;", "").replace(" zł", "").replace(",", ".")) || 0 : 0;
+    let sNawoz3 = nawoz3 ? parseFloat(nawoz3.innerHTML.replaceAll("&nbsp;", "").replace(" zł", "").replace(",", ".")) || 0 : 0;
+    let sNawoz4 = nawoz4 ? parseFloat(nawoz4.innerHTML.replaceAll("&nbsp;", "").replace(" zł", "").replace(",", ".")) || 0 : 0;
 
-    let result = s7 + s8 + s9 + s10 + s11 + s12 + s13 + s14 + s15 + s16 + s17 + sNawoz1 + s20 + sNawoz2;
+    let result = s7 + s8 + s9 + s10 + s11 + s12 + s13 + s14 + s15 + s16 + s17 + sNawoz1 + s20 + sNawoz2 + sNawoz3 + s21 + sNawoz4 + s22;
 
     if (result !== 0) {
       res2.innerHTML = result.toLocaleString("pl-PL", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " zł/ha/rok";
@@ -566,11 +571,12 @@ document.addEventListener("input", function (event) {
 });
 
 class miniKalkulator {
-  constructor(path, name, unit1, unit2) {
+  constructor(path, name, unit1, unit2, divide = 1) {
     this.path = path;
     this.unit1 = unit1;
     this.unit2 = unit2;
     this.name = name;
+    this.divide = divide;
     this.sections = [];
 
     this.result = document.createElement("div");
@@ -603,9 +609,9 @@ class miniKalkulator {
                 <div class="p-1">Koszt:</div>
                 <div class="p-1 ml-2 text-top-agrar-green total-cost">0</div>
               </div>
-            </div>
-            <div class="flex w-80 justify-center">
-              <input type="button" class="mr-2 add-btn" value="Kliknij i dodaj kolejny" />
+              <div class="flex w-full justify-center">
+                <input type="button" class="mr-2 add-btn  bg-top-agrar-green/5" value="Kliknij i dodaj kolejny" />
+              </div>
             </div>
           </div>
           <div class="flex text-2xl mt-4 w-full justify-center items-center h-fit">
@@ -669,12 +675,13 @@ class miniKalkulator {
     const updateCost = () => {
       const cost = parseFloat(costInput.value) || 0;
       const dose = parseFloat(doseInput.value) || 0;
+      let result = (cost * dose) / this.divide;
 
-      if (cost * dose === 0) {
+      if (result === 0) {
         totalCost.textContent = "podaj wartości";
       }
-      if (cost * dose < 100000000) {
-        totalCost.textContent = (cost * dose).toLocaleString("pl-PL", { minimumFractionDigits: 0, maximumFractionDigits: 2 }) + " zł";
+      if (result < 100000000) {
+        totalCost.textContent = result.toLocaleString("pl-PL", { minimumFractionDigits: 0, maximumFractionDigits: 2 }) + " zł";
       } else {
         totalCost.textContent = "za dużo";
       }
@@ -690,7 +697,7 @@ class miniKalkulator {
     const totalSumElement = this.result.querySelector(".total-sum");
 
     let sum = this.sections.reduce((acc, section) => {
-      const costText = section.querySelector(".total-cost").innerHTML.replaceAll("&nbsp;", "").replace(" zł", "");
+      const costText = section.querySelector(".total-cost").innerHTML.replaceAll("&nbsp;", "").replace(" zł", "").replace(",", ".");
       const cost = parseFloat(costText) || 0;
       return acc + cost;
     }, 0);
@@ -699,8 +706,10 @@ class miniKalkulator {
   }
 }
 
-window.NawozenieMineralne = new miniKalkulator(document.querySelector("#nawozenie-mineralne"), "NawozenieMineralne", "zł/t", "kg/ha");
+window.NawozenieMineralne = new miniKalkulator(document.querySelector("#nawozenie-mineralne"), "NawozenieMineralne", "zł/t", "kg/ha", 100);
 window.NawozenieDolistne = new miniKalkulator(document.querySelector("#nawozy-dolistne"), "NawozenieDolistne", "zł/l", "l/ha");
+window.SOR = new miniKalkulator(document.querySelector("#SORiA"), "SOR", "zł/l, kg", "l, kg/ha");
+window.biopraparat = new miniKalkulator(document.querySelector("#biopreparaty"), "biopreparat", "zł/l, kg", "l, kg/ha");
 
 let sec20in1 = document.querySelector("#section-20-input-1");
 let sec20in2 = document.querySelector("#section-20-input-2");
@@ -721,6 +730,48 @@ document.querySelectorAll(".section-20").forEach((input) => {
     }
 
     sec20res1.innerHTML = result;
+    recalculateSectionHeight();
+  });
+});
+let sec21in1 = document.querySelector("#section-21-input-1");
+let sec21in2 = document.querySelector("#section-21-input-2");
+let sec21res1 = document.querySelector("#section-21-result-1");
+document.querySelectorAll(".section-21").forEach((input) => {
+  input.addEventListener("input", function () {
+    let val1 = Number(sec21in1.value) || 0;
+    let val2 = Number(sec21in2.value) || 0;
+    let result = val1 * val2;
+
+    if (result > 100000000) {
+      result = "za dużo";
+    } else if (result === 0) {
+      result = "podaj wartości";
+    } else {
+      result = result.toLocaleString("pl-PL", { minimumFractionDigits: 0, maximumFractionDigits: 2 }) + " zł/ha";
+    }
+
+    sec21res1.innerHTML = result;
+    recalculateSectionHeight();
+  });
+});
+let sec22in1 = document.querySelector("#section-22-input-1");
+let sec22in2 = document.querySelector("#section-22-input-2");
+let sec22res1 = document.querySelector("#section-22-result-1");
+document.querySelectorAll(".section-22").forEach((input) => {
+  input.addEventListener("input", function () {
+    let val1 = Number(sec22in1.value) || 0;
+    let val2 = Number(sec22in2.value) || 0;
+    let result = val1 * val2;
+
+    if (result > 100000000) {
+      result = "za dużo";
+    } else if (result === 0) {
+      result = "podaj wartości";
+    } else {
+      result = result.toLocaleString("pl-PL", { minimumFractionDigits: 0, maximumFractionDigits: 2 }) + " zł/ha";
+    }
+
+    sec22res1.innerHTML = result;
     recalculateSectionHeight();
   });
 });
