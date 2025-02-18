@@ -916,3 +916,50 @@ class Nawadnianie {
 }
 
 window.Nawadnianie = new Nawadnianie(document.querySelector("#nawadnianie"), "Nawadnianie");
+
+const resetBtn = document.querySelector("#reset");
+function resetAll() {
+  document.querySelectorAll("input").forEach((input) => {
+    if (input.type === "checkbox" || input.type === "radio") {
+      input.checked = false;
+    } else {
+      input.value = "";
+    }
+  });
+
+  document.querySelectorAll("[id$='result-1'], [id$='result-2'], [id$='result-3'], [id$='result-4'], [id$='result-5'], [id$='result-6']").forEach((result) => {
+    result.innerHTML = "podaj wartości";
+  });
+
+  document.querySelector("#nawozenie-mineralne").innerHTML = "";
+  document.querySelector("#nawozy-dolistne").innerHTML = "";
+  document.querySelector("#SORiA").innerHTML = "";
+  document.querySelector("#biopreparaty").innerHTML = "";
+  document.querySelector("#nawadnianie").innerHTML = "";
+  window.NawozenieMineralne = new miniKalkulator(document.querySelector("#nawozenie-mineralne"), "NawozenieMineralne", "zł/t", "kg/ha", 100);
+  window.NawozenieDolistne = new miniKalkulator(document.querySelector("#nawozy-dolistne"), "NawozenieDolistne", "zł/l", "l/ha");
+  window.SOR = new miniKalkulator(document.querySelector("#SORiA"), "SOR", "zł/l, kg", "l, kg/ha");
+  window.biopraparat = new miniKalkulator(document.querySelector("#biopreparaty"), "biopreparat", "zł/l, kg", "l, kg/ha");
+  window.Nawadnianie = new Nawadnianie(document.querySelector("#nawadnianie"), "Nawadnianie");
+
+  document.querySelectorAll(".show-hide-content").forEach((content) => {
+    content.style.height = "0px";
+  });
+
+  document.querySelectorAll(".display-state-button").forEach((btn) => {
+    btn.textContent = "Rozwiń";
+  });
+  document.querySelector("#section-6-input-1").value = 1580.89;
+  document.querySelector("#section-6-input-2").value = 483.2;
+  document.querySelector("#section-6-input-3").value = 168.79;
+  document.querySelector("#section-6-input-4").value = 256.55;
+  document.querySelector("#section-6-input-5").value = 435.1;
+  document.querySelector("#section-6-input-6").value = 87.02;
+  document.querySelector("#section-6-input-7").value = 225.01;
+  document.querySelector("#section-6-input-8").value = 174.04;
+  document.querySelector("#section-6-input-9").value = 261.06;
+  document.querySelector("#section-6-input-10").value = 251.94;
+  document.querySelector("#section-6-input-11").value = 134.6;
+}
+
+resetBtn.addEventListener("click", resetAll);
