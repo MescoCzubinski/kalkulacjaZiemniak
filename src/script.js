@@ -14,7 +14,10 @@ document.addEventListener("input", (event) => {
     const cursorPosition = inputField.selectionStart;
     const oldLength = inputField.value.length;
 
-    inputField.value = format(inputField.value);
+    console.log(inputField);
+    if (!inputField.classList.contains("text")) {
+      inputField.value = format(inputField.value);
+    }
 
     const newLength = inputField.value.length;
     inputField.selectionStart = inputField.selectionEnd = cursorPosition + (newLength - oldLength);
@@ -553,25 +556,19 @@ document.addEventListener("input", function (event) {
     let nawoz3 = document.querySelector("#SOR");
     let nawoz4 = document.querySelector("#biopreparat");
     let nawoz5 = document.querySelector("#Nawadnianie");
-    let nawoz6 = document.querySelector("#Nawadnianie-check");
 
     let sNawoz1 = nawoz1 ? parseFloat(nawoz1.innerHTML.replaceAll("&nbsp;", "").replace(" zł", "").replace(",", ".")) || 0 : 0;
     let sNawoz2 = nawoz2 ? parseFloat(nawoz2.innerHTML.replaceAll("&nbsp;", "").replace(" zł", "").replace(",", ".")) || 0 : 0;
     let sNawoz3 = nawoz3 ? parseFloat(nawoz3.innerHTML.replaceAll("&nbsp;", "").replace(" zł", "").replace(",", ".")) || 0 : 0;
     let sNawoz4 = nawoz4 ? parseFloat(nawoz4.innerHTML.replaceAll("&nbsp;", "").replace(" zł", "").replace(",", ".")) || 0 : 0;
     let sNawoz5 = nawoz5 ? parseFloat(nawoz5.innerHTML.replaceAll("&nbsp;", "").replace(" zł", "").replace(",", ".")) || 0 : 0;
-    let czyPodlewanie = nawoz6.checked ? 1 : 0;
-    console.log(czyPodlewanie);
-    if (czyPodlewanie === 1 && Number(sec2in1.value) !== Infinity) {
-      sNawoz5 /= Number(sec2in1.value);
-      console.log(sNawoz5 / Number(sec2in1.value));
-    }
+
     let result = s7 + s8 + s9 + s10 + s11 + s12 + s13 + s14 + s15 + s16 + s17 + sNawoz1 + s20 + sNawoz2 + sNawoz3 + s21 + sNawoz4 + s22 + sNawoz5;
 
     if (result !== 0) {
       res2.innerHTML = result.toLocaleString("pl-PL", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " zł/ha/rok";
       res3.innerHTML = (result * Number(sec2in1.value)).toLocaleString("pl-PL", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " zł";
-      res4.innerHTML = r1 - result + " zł";
+      res4.innerHTML = (r1 - result * Number(sec2in1.value)).toLocaleString("pl-PL", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " zł";
       if (Number(sec2in2.value) !== 0) res5.innerHTML = (result / Number(sec2in2.value)).toLocaleString("pl-PL", { minimumFractionDigits: 0, maximumFractionDigits: 0 }) + " dt/ha";
       if (Number(sec1in3.value) !== 0) res6.innerHTML = (result / Number(sec1in3.value)).toLocaleString("pl-PL", { minimumFractionDigits: 0, maximumFractionDigits: 0 }) + " zł/t";
     }
@@ -599,12 +596,12 @@ class miniKalkulator {
             <div class="section">
               <div class="border-t-2 mb-2 border-bg-info"></div>
               <div class="flex">
-                  <input type="text" class="name" placeholder="nazwa" />
+                  <input type="text" class="name text" placeholder="nazwa" />
               </div>
               <div class="flex flex-col w-10/12">
                   <div class="text-xl text-left mb-2 ml-2 mt-4">Koszt jednostkowy:</div>
                   <div class="flex">
-                      <input type="text" class="cost-per-unit" placeholder="koszt za t" class="${this.name}"/>
+                      <input type="text" class="cost-per-unit" placeholder="koszt za ${this.unit1.replace("zł/", "")}" class="${this.name}"/>
                       <div class="ml-2 text-xl flex items-center">${this.unit1}</div>
                   </div>
                   <div class="text-xl text-left mb-2 ml-2 mt-4">Dawka na ha:</div>
@@ -617,15 +614,17 @@ class miniKalkulator {
                 <div class="p-1">Koszt:</div>
                 <div class="p-1 ml-2 text-top-agrar-green total-cost">0</div>
               </div>
-              <div class="flex w-full justify-center">
+
+              </div>
+              </div>
+              <div class="flex text-2xl mt-4 w-full justify-start flex-col items-center h-fit">
+                            <div class="flex justify-center w-72">
                 <input type="button" class="mr-2 add-btn  bg-top-agrar-green/5" value="Kliknij i dodaj kolejny" />
               </div>
-            </div>
-          </div>
-          <div class="flex text-2xl mt-4 w-full justify-center items-center h-fit">
+          <div class="w-72 flex mt-4 mb-4">
             <div class="p-1 font-bold">SUMA:</div>
             <div class="p-1 ml-2 text-top-agrar-green total-sum" id="${this.name}">podaj wartości</div>
-          </div>`;
+          </div></div>`;
 
     this.path.appendChild(this.result);
 
@@ -642,13 +641,13 @@ class miniKalkulator {
     newSection.innerHTML = `
           <div class="border-t-2 mb-2 border-bg-info"></div>
           <div class="flex">
-              <input type="text" class="name" placeholder="nazwa" />
+              <input type="text" class="name text" placeholder="nazwa" />
               <input type="button" class="ml-2 mt-2 remove-btn" value="-" />
           </div>
           <div class="flex flex-col w-10/12">
               <div class="text-xl text-left mb-2 ml-2 mt-4">Koszt jednostkowy:</div>
               <div class="flex">
-                  <input type="text" class="cost-per-unit" placeholder="koszt za t" class="${this.name}"/>
+                  <input type="text" class="cost-per-unit" placeholder="koszt za ${this.unit1.replace("zł/", "")}" class="${this.name}"/>
                   <div class="ml-2 text-xl flex items-center">${this.unit1}</div>
               </div>
               <div class="text-xl text-left mb-2 ml-2 mt-4">Dawka na ha:</div>
@@ -714,9 +713,12 @@ class miniKalkulator {
   }
 }
 
-window.NawozenieMineralne = new miniKalkulator(document.querySelector("#nawozenie-mineralne"), "NawozenieMineralne", "zł/t", "kg/ha", 100);
-window.NawozenieDolistne = new miniKalkulator(document.querySelector("#nawozy-dolistne"), "NawozenieDolistne", "zł/l", "l/ha");
+window.NawozenieMineralne = new miniKalkulator(document.querySelector("#nawozenie-mineralne"), "NawozenieMineralne", "zł/t", "kg/ha", 1000);
+
+window.NawozenieDolistne = new miniKalkulator(document.querySelector("#nawozy-dolistne"), "NawozenieDolistne", "zł/l, kg", "l, kg/ha");
+
 window.SOR = new miniKalkulator(document.querySelector("#SORiA"), "SOR", "zł/l, kg", "l, kg/ha");
+
 window.biopraparat = new miniKalkulator(document.querySelector("#biopreparaty"), "biopreparat", "zł/l, kg", "l, kg/ha");
 
 let sec20in1 = document.querySelector("#section-20-input-1");
@@ -800,17 +802,14 @@ class Nawadnianie {
     this.result.innerHTML = `
         <div class="section-container">
         </div>
-        <div class="flex w-full justify-center">
+        <div class="flex text-2xl mt-4 w-full justify-center items-center h-fit flex-col">
+        <div class="flex justify-center w-72">
           <input type="button" class="mr-2 add-btn bg-top-agrar-green/5" value="Kliknij i dodaj kolejny" />
         </div>
-        <div class="flex text-2xl mt-4 w-full justify-center items-center h-fit">
+        <div class="flex mt-4 mb-4">
           <div class="p-1 font-bold">SUMA:</div>
           <div class="p-1 ml-2 text-top-agrar-green total-sum" id="${this.name}">podaj wartości</div>
-        </div>
-        <div class="flex text-xl mt-4 mb-4 w-full justify-center items-center h-fit">
-          <div class="p-1 font-bold">Kliknij + jeśli podajesz koszt za wszytskie hektary:</div>
-          <input type="checkbox" class="check ml-2" id="${this.name}-check" />
-        </div>
+        </div></div>
         `;
 
     this.path.appendChild(this.result);
@@ -832,7 +831,7 @@ class Nawadnianie {
               <input type="text" class="cost-per-hour" placeholder="zł za godzinę"/>
               <div class="ml-2 text-xl flex items-center">zł/godz.</div>
             </div>
-            <div class="text-xl text-left mb-2 ml-2 mt-4">Dawka na ha:</div>
+            <div class="text-xl text-left mb-2 ml-2 mt-4">Czas nawadniania 1 ha:</div>
             <div class="flex">
               <input type="text" class="dose-per-ha" placeholder="godz./ha"/>
               <div class="ml-2 text-xl flex items-center">godz./ha</div>
@@ -949,6 +948,7 @@ function resetAll() {
   document.querySelectorAll(".display-state-button").forEach((btn) => {
     btn.textContent = "Rozwiń";
   });
+  document.querySelector("#section-2-input-1").value = 1;
   document.querySelector("#section-6-input-1").value = 1580.89;
   document.querySelector("#section-6-input-2").value = 483.2;
   document.querySelector("#section-6-input-3").value = 168.79;
