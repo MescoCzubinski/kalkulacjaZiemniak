@@ -14,7 +14,6 @@ document.addEventListener("input", (event) => {
     const cursorPosition = inputField.selectionStart;
     const oldLength = inputField.value.length;
 
-    console.log(inputField);
     if (!inputField.classList.contains("text")) {
       inputField.value = format(inputField.value);
     }
@@ -576,7 +575,7 @@ document.addEventListener("input", function (event) {
 });
 
 class miniKalkulator {
-  constructor(path, name, unit1, unit2, divide = 1) {
+  constructor(path, name, unit1, unit2, divide) {
     this.path = path;
     this.unit1 = unit1;
     this.unit2 = unit2;
@@ -601,12 +600,12 @@ class miniKalkulator {
               <div class="flex flex-col w-10/12">
                   <div class="text-xl text-left mb-2 ml-2 mt-4">Koszt jednostkowy:</div>
                   <div class="flex">
-                      <input type="text" class="cost-per-unit" placeholder="koszt za ${this.unit1.replace("zł/", "")}" class="${this.name}"/>
+                      <input type="text"  inputmode="numeric" pattern="[0-9]*" class="cost-per-unit" placeholder="koszt za ${this.unit1.replace("zł/", "")}" class="${this.name}"/>
                       <div class="ml-2 text-xl flex items-center">${this.unit1}</div>
                   </div>
                   <div class="text-xl text-left mb-2 ml-2 mt-4">Dawka na ha:</div>
                   <div class="flex">
-                      <input type="text" class="dose-per-ha" placeholder="ile na 1 ha" class="${this.name}"/>
+                      <input type="text"  inputmode="numeric" pattern="[0-9]*" class="dose-per-ha" placeholder="ile na 1 ha" class="${this.name}"/>
                       <div class="ml-2 text-xl flex items-center">${this.unit2}</div>
                   </div>
               </div>
@@ -647,12 +646,12 @@ class miniKalkulator {
           <div class="flex flex-col w-10/12">
               <div class="text-xl text-left mb-2 ml-2 mt-4">Koszt jednostkowy:</div>
               <div class="flex">
-                  <input type="text" class="cost-per-unit" placeholder="koszt za ${this.unit1.replace("zł/", "")}" class="${this.name}"/>
+                  <input type="text"  inputmode="numeric" pattern="[0-9]*" class="cost-per-unit" placeholder="koszt za ${this.unit1.replace("zł/", "")}" class="${this.name}"/>
                   <div class="ml-2 text-xl flex items-center">${this.unit1}</div>
               </div>
               <div class="text-xl text-left mb-2 ml-2 mt-4">Dawka na ha:</div>
               <div class="flex">
-                  <input type="text" class="dose-per-ha" placeholder="ile na 1 ha" class="${this.name}"/>
+                  <input type="text"  inputmode="numeric" pattern="[0-9]*" class="dose-per-ha" placeholder="ile na 1 ha" class="${this.name}"/>
                   <div class="ml-2 text-xl flex items-center">${this.unit2}</div>
               </div>
               <div class="flex text-xl mt-4 w-full items-center h-fit">
@@ -682,6 +681,7 @@ class miniKalkulator {
     const updateCost = () => {
       const cost = parseFloat(costInput.value) || 0;
       const dose = parseFloat(doseInput.value) || 0;
+      console.log(cost + " * " + dose + " / " + this.divide);
       let result = (cost * dose) / this.divide;
 
       if (result === 0) {
@@ -715,11 +715,11 @@ class miniKalkulator {
 
 window.NawozenieMineralne = new miniKalkulator(document.querySelector("#nawozenie-mineralne"), "NawozenieMineralne", "zł/t", "kg/ha", 1000);
 
-window.NawozenieDolistne = new miniKalkulator(document.querySelector("#nawozy-dolistne"), "NawozenieDolistne", "zł/l, kg", "l, kg/ha");
+window.NawozenieDolistne = new miniKalkulator(document.querySelector("#nawozy-dolistne"), "NawozenieDolistne", "zł/l, kg", "l, kg/ha", 1);
 
-window.SOR = new miniKalkulator(document.querySelector("#SORiA"), "SOR", "zł/l, kg", "l, kg/ha");
+window.SOR = new miniKalkulator(document.querySelector("#SORiA"), "SOR", "zł/l, kg", "l, kg/ha", 1);
 
-window.biopraparat = new miniKalkulator(document.querySelector("#biopreparaty"), "biopreparat", "zł/l, kg", "l, kg/ha");
+window.biopraparat = new miniKalkulator(document.querySelector("#biopreparaty"), "biopreparat", "zł/l, kg", "l, kg/ha", 1);
 
 let sec20in1 = document.querySelector("#section-20-input-1");
 let sec20in2 = document.querySelector("#section-20-input-2");
@@ -828,22 +828,22 @@ class Nawadnianie {
           <div class="flex flex-col">
             <div class="text-xl text-left mb-2 ml-2 mt-4">Godzinowy koszt pompowania:</div>
             <div class="flex">
-              <input type="text" class="cost-per-hour" placeholder="zł za godzinę"/>
+              <input type="text"  inputmode="numeric" pattern="[0-9]*" class="cost-per-hour" placeholder="zł za godzinę"/>
               <div class="ml-2 text-xl flex items-center">zł/godz.</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-4">Czas nawadniania 1 ha:</div>
             <div class="flex">
-              <input type="text" class="dose-per-ha" placeholder="godz./ha"/>
+              <input type="text"  inputmode="numeric" pattern="[0-9]*" class="dose-per-ha" placeholder="godz./ha"/>
               <div class="ml-2 text-xl flex items-center">godz./ha</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-4">Koszt wody:</div>
             <div class="flex">
-              <input type="text" class="cost-per-m3" placeholder="zł za m³"/>
+              <input type="text"  inputmode="numeric" pattern="[0-9]*" class="cost-per-m3" placeholder="zł za m³"/>
               <div class="ml-2 text-xl flex items-center">zł/m³</div>
             </div>
             <div class="text-xl text-left mb-2 ml-2 mt-4">Dawka wody na ha:</div>
             <div class="flex">
-              <input type="text" class="dose-per-m3" placeholder="m³/ha"/>
+              <input type="text"  inputmode="numeric" pattern="[0-9]*"  inputmode="numeric" pattern="[0-9]*" class="dose-per-m3" placeholder="m³/ha"/>
               <div class="ml-2 text-xl flex items-center">m³/ha</div>
             </div>
           </div>
@@ -935,11 +935,11 @@ function resetAll() {
   document.querySelector("#SORiA").innerHTML = "";
   document.querySelector("#biopreparaty").innerHTML = "";
   document.querySelector("#nawadnianie").innerHTML = "";
-  window.NawozenieMineralne = new miniKalkulator(document.querySelector("#nawozenie-mineralne"), "NawozenieMineralne", "zł/t", "kg/ha", 100);
-  window.NawozenieDolistne = new miniKalkulator(document.querySelector("#nawozy-dolistne"), "NawozenieDolistne", "zł/l", "l/ha");
-  window.SOR = new miniKalkulator(document.querySelector("#SORiA"), "SOR", "zł/l, kg", "l, kg/ha");
-  window.biopraparat = new miniKalkulator(document.querySelector("#biopreparaty"), "biopreparat", "zł/l, kg", "l, kg/ha");
-  window.Nawadnianie = new Nawadnianie(document.querySelector("#nawadnianie"), "Nawadnianie");
+  window.NawozenieMineralne = new miniKalkulator(document.querySelector("#nawozenie-mineralne"), "NawozenieMineralne", "zł/t", "kg/ha", 1000);
+  window.NawozenieDolistne = new miniKalkulator(document.querySelector("#nawozy-dolistne"), "NawozenieDolistne", "zł/l", "l/ha", 1);
+  window.SOR = new miniKalkulator(document.querySelector("#SORiA"), "SOR", "zł/l, kg", "l, kg/ha", 1);
+  window.biopraparat = new miniKalkulator(document.querySelector("#biopreparaty"), "biopreparat", "zł/l, kg", "l, kg/ha", 1);
+  window.Nawadnianie = new Nawadnianie(document.querySelector("#nawadnianie"), "Nawadnianie", 1);
 
   document.querySelectorAll(".show-hide-content").forEach((content) => {
     content.style.height = "0px";
